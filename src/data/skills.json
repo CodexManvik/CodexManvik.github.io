@@ -1,0 +1,73 @@
+{
+  "categories": [
+    {
+      "name": "AI & Machine Learning",
+      "skills": [
+        "PyTorch",
+        "TensorFlow",
+        "Transformers",
+        "Hugging Face",
+        "Azure OpenAI",
+        "OpenCV",
+        "CNNs",
+        "Computer Vision",
+        "Natural Language Processing",
+        "RAG Pipelines",
+        "Scikit-learn",
+        "OpenAI"
+      ]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "skills": [
+        "Microsoft Azure",
+        "Azure App Service",
+        "CI/CD (GitHub Actions)",
+        "MLOps",
+        "Docker",
+        "Git",
+        "GitHub",
+        "Linux"
+      ]
+    },
+    {
+      "name": "Backend Development",
+      "skills": [
+        "Python",
+        "Flask",
+        "FastAPI",
+        "PostgreSQL",
+        "MySQL"
+      ]
+    },
+    {
+      "name": "Frontend Development",
+      "skills": [
+        "React",
+        "Next.js",
+        "JavaScript",
+        "Tailwind CSS",
+        "HTML5",
+        "CSS3"
+      ]
+    },
+    {
+      "name": "Data Science",
+      "skills": [
+        "Pandas",
+        "NumPy",
+        "Plotly",
+        "Jupyter"
+      ]
+    },
+    {
+      "name": "Databases & Search",
+      "skills": [
+        "PostgreSQL",
+        "MySQL",
+        "ChromaDB",
+        "Azure Cognitive Search"
+      ]
+    }
+  ]
+}

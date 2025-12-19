@@ -1,0 +1,54 @@
+{
+  "internships": [
+    {
+      "company": "Path Infotech",
+      "role": "AI Development Intern",
+      "duration": "June 2025 - August 2025",
+      "description": "Developed Sofia, an Azure-based AI chatbot for real-time policy document Q&A with semantic search and inline citations. Built end-to-end pipeline from document ingestion to conversational AI using Azure OpenAI, Cognitive Search, and Flask backend.",
+      "project": {
+        "name": "Sofia - AI Chatbot for Live Document Insights",
+        "description": "Production GenAI application providing natural-language Q&A over internal PDF policy documents with accurate citations",
+        "technologies": [
+          "Azure OpenAI",
+          "Azure Cognitive Search",
+          "Azure Blob Storage",
+          "Python Flask",
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "MySQL"
+        ],
+        "features": [
+          "Natural-language Q&A with conversational responses",
+          "Semantic search with Azure Cognitive Search indexing",
+          "In-response clickable citations pointing to source documents",
+          "Live document upload and indexing pipeline",
+          "MySQL-backed tagging system for citation categorization",
+          "HTTPS secure communication (SSL/TLS)",
+          "Dark mode UI with responsive design"
+        ]
+      },
+      "stats": [
+        {
+          "value": "99.9%",
+          "label": "Uptime Achieved"
+        },
+        {
+          "value": "25%",
+          "label": "API Speed Improvement"
+        },
+        {
+          "value": "100+",
+          "label": "Concurrent Users"
+        }
+      ],
+      "achievements": [
+        "Architected and deployed Sofia chatbot with React/Next.js frontend and Python Flask backend, achieving 99.9% uptime while scaling to 100+ concurrent users",
+        "Engineered semantic search pipeline using Azure Cognitive Search with custom skillsets for PDF text/image indexing and Azure OpenAI embeddings",
+        "Implemented query enhancement and summarization using Azure OpenAI ChatCompletionSkill, reducing API response time by 25% through optimized routing",
+        "Built citation management system with MySQL database for tagging and metadata, enabling clickable source references in chat responses",
+        "Automated deployment workflows on Azure App Service with HTTPS security, cutting release lead time to ~12 minutes"
+      ]
+    }
+  ]
+}
