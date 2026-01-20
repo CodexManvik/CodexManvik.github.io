@@ -1,40 +1,52 @@
-# Logs
-logs
-*.log
+# Dependencies
+node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+/.nyc_output
+test-results/
+playwright-report/
+playwright/.cache/
+e2e/screenshots/
+
+# Lighthouse
+lighthouse-reports/
+.lighthouseci/
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+/dist
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-# Dependencies
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Kiro IDE
-.kiro/specs/
-
-# Build files
-build/
-.cache/
-
-# Environment variables
+# Local env files
+.env*.local
 .env
-.env.local
-.env.production
 
-# OS files
-Thumbs.db
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.kiro/
