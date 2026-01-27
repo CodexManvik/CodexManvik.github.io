@@ -24,7 +24,7 @@ export function InfiniteMovingCards({
 }: InfiniteMovingCardsProps) {
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -34,9 +34,9 @@ export function InfiniteMovingCards({
 
   // Calculate animation duration based on speed (slower on mobile for better performance)
   const speedMap = {
-    slow: (mounted && isMobile) ? 60 : 40,
-    normal: (mounted && isMobile) ? 30 : 20,
-    fast: (mounted && isMobile) ? 15 : 10,
+    slow: (mounted && isMobile) ? 120 : 80,
+    normal: (mounted && isMobile) ? 80 : 60,
+    fast: (mounted && isMobile) ? 40 : 30,
   };
   const duration = speedMap[speed];
 
@@ -49,7 +49,7 @@ export function InfiniteMovingCards({
   return (
     <div className={cn('relative overflow-hidden', className)}>
       <motion.div
-        className="flex gap-8"
+        className="flex gap-8 w-max"
         animate={{
           x: direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%'],
         }}

@@ -26,22 +26,53 @@ export const experience: ExperienceEntry[] = [
     ],
     achievements: [
       '3x Student Excellence Award (2025)',
-      'Published research on deep learning watermarking techniques',
+      //'Published research on deep learning watermarking techniques',
     ],
   },
 ];
 
 export const techStack: TechStackItem[] = [
+  // AI/ML
   { name: 'Python', icon: 'Code' },
   { name: 'PyTorch', icon: 'Flame' },
   { name: 'TensorFlow', icon: 'Brain' },
-  { name: 'Azure OpenAI', icon: 'Cloud' },
-  { name: 'FastAPI', icon: 'Zap' },
-  { name: 'ChromaDB', icon: 'Database' },
-  { name: 'Docker', icon: 'Box' },
+  { name: 'Transformers', icon: 'Sparkles' },
   { name: 'OpenCV', icon: 'Eye' },
-  { name: 'React', icon: 'Atom' },
+  { name: 'Scikit-learn', icon: 'TrendingUp' },
+  { name: 'Azure OpenAI', icon: 'Cloud' },
+  { name: 'RAG Pipelines', icon: 'Brain' },
+  { name: 'LLMs', icon: 'Bot' },
+  
+  // Cloud/DevOps
+  { name: 'Azure', icon: 'Cloud' },
+  { name: 'Docker', icon: 'Box' },
+  { name: 'Kubernetes', icon: 'Container' },
+  { name: 'Git', icon: 'GitBranch' },
+  { name: 'Linux', icon: 'Terminal' },
+  { name: 'CI/CD', icon: 'Workflow' },
+  
+  // Backend
+  { name: 'FastAPI', icon: 'Zap' },
+  { name: 'Flask', icon: 'Beaker' },
+  { name: 'PostgreSQL', icon: 'Database' },
+  { name: 'MySQL', icon: 'Database' },
+  { name: 'Redis', icon: 'Layers' },
+  { name: 'ChromaDB', icon: 'Database' },
+  { name: 'MongoDB', icon: 'Database' },
+  { name: 'SQLite', icon: 'Database' },
+  { name: 'FAISS', icon: 'Search' },
+  { name: 'C/C++', icon: 'Cpu' },
+  
+  // Frontend
   { name: 'Next.js', icon: 'Triangle' },
+  { name: 'React', icon: 'Atom' },
   { name: 'TypeScript', icon: 'FileCode2' },
+  { name: 'Streamlit', icon: 'AppWindow' },
   { name: 'Tailwind CSS', icon: 'Palette' },
+  { name: 'JavaScript', icon: 'Code2' },
+  
+  // Data Science
+  { name: 'Pandas', icon: 'Table' },
+  { name: 'NumPy', icon: 'Calculator' },
+  { name: 'Jupyter', icon: 'BookOpen' },
 ];
