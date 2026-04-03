@@ -2,6 +2,34 @@ import { Project } from './types';
 
 export const projects: Project[] = [
   {
+    id: 'agentic-rag-distributed-content',
+    title: 'Agentic RAG for Distributed Content',
+    company: 'Personal Project',
+    description: 'Distributed RAG pipeline for real-time ingest + retrieval with agent-based orchestration.',
+    fullDetail: 'Built an agentic retrieval augmented generation system for distributed docs, with chunking, vectorization, and contextual agents. Used local ChromaDB for embedding search and a custom agent controller to route queries by document domain.',
+    technologies: ['Next.js', 'Python', 'ChromaDB', 'OpenAI', 'TypeScript'],
+    repoUrl: 'https://github.com/CodexManvik/Agentic-Rag-for-Distributed-Content',
+    metrics: [
+      { label: 'Specialized Agents Made', value: '6+' },
+      { label: 'Query latency', value: '<30s' }
+    ],
+    gridSpan: { cols: 2, rows: 1 },
+  },
+  {
+    id: 'automatic-music-generation',
+    title: 'Automatic Music Generation',
+    company: 'Personal Project',
+    description: 'AI music pipeline generating multi-instrument tracks from text prompts.',
+    fullDetail: 'Created a neural composition framework that converts text prompts and mood tags into MIDI + audio using transformer-based music models. Integrated with evaluation metrics to tune harmonic quality and structure.',
+    technologies: ['Python', 'PyTorch', 'MIDI', 'Machine Learning', 'Streamlit'],
+    repoUrl: 'https://github.com/CodexManvik/automatic-music-generation',
+    metrics: [
+      { label: 'Model used', value: 'LSTM' },
+      { label: 'Notes Generated', value: 'Piano' }
+    ],
+    gridSpan: { cols: 1, rows: 1 },
+  },
+  {
     id: 'ai-mock-interviewer',
     title: 'Interview Mirror',
     company: 'Academic Project',

@@ -2,6 +2,19 @@ import { ExperienceEntry, TechStackItem } from './types';
 
 export const experience: ExperienceEntry[] = [
   {
+    id: 'techlearn',
+    type: 'work',
+    title: 'Backend Engineering Intern',
+    organization: 'TechLearn',
+    duration: 'Mar 2026 - Present (Remote)',
+    description: [
+      'Built Dashboard Stats API (PR #17) for real-time KPI aggregation used by 200+ students and educators',
+      'Designed Filtered Submission API + pagination (PR #11) to accelerate submission list loading by 5x',
+      'Implemented Analytics APIs (trend/completion/volume) and optimized query performance by 40%',
+      'Created Submission schema + indexes (PR #15) improving throughput and reliability for high-concurrency loads',
+    ],
+  },
+  {
     id: 'path-infotech',
     type: 'work',
     title: 'AI Development Intern',
@@ -25,8 +38,10 @@ export const experience: ExperienceEntry[] = [
       'Focus on Deep Learning, RAG systems, and Computer Vision',
     ],
     achievements: [
-      '3x Student Excellence Award (2025)',
-      //'Published research on deep learning watermarking techniques',
+      '4x Student Excellence Award (2025)',
+      'Selected to represent college in SIH All India round 2025',
+      'Finalist: Dell x Google Developer Group Ideathon',
+      'Top 15000 in Google The Big Code Challenge',
     ],
   },
 ];
