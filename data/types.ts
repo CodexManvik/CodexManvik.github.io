@@ -32,3 +32,12 @@ export interface TechStackItem {
   name: string;
   icon: string;
 }
+
+export interface Certification {
+  id: string;
+  title: string;
+  description: string;
+  issuer: string;
+  category: string;
+  fileName: string;
+}

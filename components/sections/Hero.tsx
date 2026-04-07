@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Spotlight } from '@/components/ui/spotlight';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Award, Download } from 'lucide-react';
 import { useReducedMotion } from '@/lib/hooks/useReducedMotion';
 
 export function Hero() {
@@ -63,7 +64,7 @@ export function Hero() {
         <motion.div
           {...animationProps}
           transition={{ duration: prefersReducedMotion ? 0 : 0.8, delay: prefersReducedMotion ? 0 : 0.8 }}
-          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="mt-10 mx-auto grid w-full max-w-2xl grid-cols-1 gap-4 sm:grid-cols-2"
         >
           <button
             onClick={() => {
@@ -85,6 +86,15 @@ export function Hero() {
             Download Resume
             <Download className="h-5 w-5 transition-transform group-hover:translate-y-1" aria-hidden="true" />
           </a>
+
+          <Link
+            href="/certifications"
+            aria-label="View certifications"
+            className="group relative inline-flex items-center gap-2 rounded-lg border border-cyan-300/30 bg-cyan-500/10 px-8 py-4 text-base font-medium text-cyan-100 transition-all hover:scale-105 hover:bg-cyan-500/20 focus:outline-none focus:ring-2 focus:ring-cyan-300/60 focus:ring-offset-2 focus:ring-offset-black sm:col-span-2 sm:justify-self-center"
+          >
+            View Certifications
+            <Award className="h-5 w-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+          </Link>
         </motion.div>
       </div>
     </section>
