@@ -8,10 +8,10 @@ export const experience: ExperienceEntry[] = [
     organization: 'TechLearn',
     duration: 'Mar 2026 - Present (Remote)',
     description: [
-      'Built Dashboard Stats API (PR #17) for real-time KPI aggregation used by 200+ students and educators',
-      'Designed Filtered Submission API + pagination (PR #11) to accelerate submission list loading by 5x',
+      'Built Dashboard Stats API for real-time KPI aggregation used by students and educators',
+      'Designed Filtered Submission API + pagination to accelerate submission list loading by 5x',
       'Implemented Analytics APIs (trend/completion/volume) and optimized query performance by 40%',
-      'Created Submission schema + indexes (PR #15) improving throughput and reliability for high-concurrency loads',
+      'Created Submission schema + indexes improving throughput and reliability for high-concurrency loads',
     ],
   },
   {
@@ -38,7 +38,7 @@ export const experience: ExperienceEntry[] = [
       'Focus on Deep Learning, RAG systems, and Computer Vision',
     ],
     achievements: [
-      '4x Student Excellence Award (2025)',
+      '4x Student Excellence Award recipient for academic performance and project work',
       'Selected to represent college in SIH All India round 2025',
       'Finalist: Dell x Google Developer Group Ideathon',
       'Top 15000 in Google The Big Code Challenge',
