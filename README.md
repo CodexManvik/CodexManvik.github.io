@@ -1,209 +1,73 @@
-# AI/ML Portfolio
+# React + TypeScript + Vite
 
-Modern portfolio website built with Next.js 16, featuring Aceternity UI components and advanced animations.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-**Live:** [https://codexmanvik.github.io](https://codexmanvik.github.io)
+Currently, two official plugins are available:
 
-## Tech Stack
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- **Framework:** Next.js 16 (App Router, Static Export)
-- **Styling:** Tailwind CSS 3.4
-- **Animations:** Framer Motion 11
-- **Icons:** Lucide React
-- **Testing:** Vitest + Playwright
-- **Deployment:** GitHub Pages (GitHub Actions)
+## React Compiler
 
-## Features
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- ✨ Aceternity UI components (Spotlight, Bento Grid, Infinite Marquee, Tracing Beam)
-- 🎯 Interactive project modals with detailed views
-- 📱 Fully responsive (mobile-first design)
-- ⚡ Optimized performance (static export, code splitting)
-- 🎨 Glassmorphism design with gradient effects
-- 📧 Contact form with Formspree integration
-- 🔍 SEO optimized
-- ♿ WCAG 2.1 AA accessibility compliant
-- 🧪 Comprehensive test coverage (unit + E2E)
+## Expanding the ESLint configuration
 
-## Quick Start
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```bash
-# Install dependencies
-npm install
-
-# Development server
-npm run dev
-
-# Production build
-npm run build
-
-# Preview production build
-npm run preview
-
-# Run tests
-npm test
-
-# E2E tests
-npm run test:e2e
-```
-
-## Project Structure
-
-```
-├── app/                    # Next.js App Router
-│   ├── layout.tsx         # Root layout
-│   ├── page.tsx           # Home page
-│   └── globals.css        # Global styles
-├── components/
-│   ├── sections/          # Page sections
-│   │   ├── Hero.tsx
-│   │   ├── ProjectsGrid.tsx
-│   │   ├── ExperienceTimeline.tsx
-│   │   ├── TechStackMarquee.tsx
-│   │   └── Contact.tsx
-│   └── ui/                # Reusable UI components
-│       ├── spotlight.tsx
-│       ├── bento-grid.tsx
-│       ├── infinite-cards.tsx
-│       ├── tracing-beam.tsx
-│       ├── moving-border.tsx
-│       └── project-modal.tsx
-├── data/                  # Content configuration
-│   ├── projects.ts        # Project data
-│   ├── experience.ts      # Work/education history
-│   ├── types.ts           # TypeScript interfaces
-│   └── schemas.ts         # Zod validation schemas
-├── lib/
-│   ├── hooks/             # Custom React hooks
-│   └── utils.ts           # Utility functions
-├── e2e/                   # Playwright E2E tests
-└── public/
-    └── assets/            # Static assets (resume, etc.)
-```
-
-## Configuration
-
-### Update Personal Info
-
-**Hero Section** (`components/sections/Hero.tsx`):
-```typescript
-// Update name, title, description
-```
-
-**Contact Form** (`components/sections/Contact.tsx`):
-```typescript
-// Replace PLACEHOLDER_FORMSPREE_ID with your Formspree form ID
-fetch('https://formspree.io/f/YOUR_FORM_ID', ...)
-```
-
-**Social Links** (already configured):
-- Email: manvik.talwar@gmail.com
-- GitHub: https://github.com/CodexManvik
-- LinkedIn: https://linkedin.com/in/manvik-talwar
-
-### Update Projects
-
-Edit `data/projects.ts`:
-```typescript
-export const projects: Project[] = [
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
   {
-    id: 'unique-id',
-    title: 'Project Name',
-    company: 'Company/Type',
-    description: 'Short description',
-    fullDetail: 'Detailed description for modal',
-    technologies: ['Tech1', 'Tech2'],
-    repoUrl: 'https://github.com/...',
-    demoUrl: 'https://youtu.be/...',  // Optional
-    metrics: [
-      { label: 'Metric', value: 'Value' }
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
     ],
-    gridSpan: { cols: 2, rows: 1 }
-  }
-]
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-### Update Experience
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-Edit `data/experience.ts`:
-```typescript
-export const experience: ExperienceEntry[] = [
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
   {
-    id: 'unique-id',
-    type: 'work' | 'education',
-    title: 'Position/Degree',
-    organization: 'Company/University',
-    duration: 'Jan 2023 - Present',
-    description: ['Point 1', 'Point 2'],
-    achievements: ['Achievement 1']  // Optional
-  }
-]
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-## Deployment
-
-### GitHub Pages (Automated)
-
-1. Push to `main` branch:
-```bash
-git add .
-git commit -m "feat: update portfolio"
-git push origin main
-```
-
-2. Enable GitHub Pages:
-   - Go to repo Settings → Pages
-   - Source: GitHub Actions
-   - Workflow auto-deploys on push
-
-3. Site live at: `https://codexmanvik.github.io`
-
-### Manual Deployment
-
-```bash
-npm run build
-# Upload ./out directory to hosting provider
-```
-
-## Testing
-
-```bash
-# Unit tests (Vitest)
-npm test
-
-# E2E tests (Playwright)
-npm run test:e2e
-
-# Visual regression tests
-npm run test:e2e -- visual-regression
-
-# Accessibility tests
-npm run test:e2e -- accessibility
-
-# Performance tests (Lighthouse)
-npm run lighthouse
-```
-
-## Performance
-
-- **First Contentful Paint:** < 1.5s
-- **Time to Interactive:** < 3.5s
-- **Lighthouse Score:** 90+
-- **Bundle Size:** Optimized with code splitting
-
-## Browser Support
-
-- Chrome/Edge (last 2 versions)
-- Firefox (last 2 versions)
-- Safari (last 2 versions)
-- Mobile browsers (iOS Safari, Chrome Android)
-
-## License
-
-MIT
-
-## Contact
-
-- **Email:** manvik.talwar@gmail.com
-- **GitHub:** [@CodexManvik](https://github.com/CodexManvik)
-- **LinkedIn:** [manvik-talwar](https://linkedin.com/in/manvik-talwar)
