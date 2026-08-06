@@ -12,6 +12,8 @@
     --fg-subtle: 160 160 160;
     --accent: 212 134 15;
     --accent-dark: 168 63 57;
+    /* Accent darkened for small text on light backgrounds (WCAG AA). */
+    --accent-text: 146 88 4;
     --border: 0 0 0;
     --surface: 245 243 240;
 
@@ -33,6 +35,8 @@
     --fg-subtle: 120 120 120;
     --accent: 255 153 0;
     --accent-dark: 168 63 57;
+    /* Bright accent already clears AA on the dark surface (8.75:1 on #121212). */
+    --accent-text: 255 153 0;
     --border: 255 255 255;
     --surface: 18 18 18;
 
@@ -44,6 +48,12 @@
     --hero-line: 120 170 235;
     --hero-gradient: linear-gradient(180deg, #10366f 0%, #0a2347 38%, #06142c 68%, #000000 100%);
     --hero-overlay: radial-gradient(ellipse at center, rgba(70, 140, 255, 0.16) 0%, rgba(10, 24, 49, 0.58) 58%, rgba(0, 0, 0, 0.93) 100%);
+  }
+
+  /* `.dark` and `:root` tie at specificity (0,1,0), so the theme override can
+     lose to :root depending on emitted order. `html.dark` (0,1,1) always wins. */
+  html.dark {
+    --accent-text: 255 153 0;
   }
 
   html {
@@ -79,6 +89,12 @@
 
   .font-mono-data {
     font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Accent for small text. Darkened in light mode so 11px labels clear WCAG AA;
+     the vivid --accent stays for large/decorative marks. */
+  .text-accent-token {
+    color: rgb(var(--accent-text));
   }
 
   .text-gradient {
@@ -117,4 +133,11 @@
   .preserve-3d {
     transform-style: preserve-3d;
   }
+}
+
+/* Outside @layer so it is never reordered behind :root. Tailwind sorts rules
+   within a layer, which let `:root` win over `.dark` for this token. */
+html.dark,
+.dark {
+  --accent-text: 255 153 0;
 }

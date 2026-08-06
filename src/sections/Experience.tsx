@@ -15,10 +15,24 @@ interface Job {
 
 const jobs: Job[] = [
   {
-    company: 'TechLearn',
-    role: 'Backend Engineering Intern',
-    period: 'Mar 2026 – Present',
-    summary: 'Built scalable backend systems powering real-time analytics for education platforms.',
+    company: 'Niva Bupa Health Insurance',
+    role: 'IT Applications Intern',
+    period: 'May 2026 – Jul 2026',
+    summary: 'Built a claims auto-adjudication engine for the ReAssure 3.0 health product, pairing deterministic rules with a locally hosted LLM.',
+    bullets: [
+      'Built a 7-gate adjudication pipeline that fails fast and emits a full audit trace per claim',
+      'Wrote a planner that topologically sorts policy rules into a reproducible DAG for audit replay',
+      'Ran clinical reasoning on a local Gemma model with GBNF grammar to guarantee parseable JSON',
+      'Routed every decision through four confidence tiers, escalating low-confidence claims to human review',
+      'Shipped a React dashboard streaming each gate result live over Server-Sent Events',
+      'Covered the engine with 71 passing tests that run without a live LLM',
+    ],
+  },
+  {
+    company: 'TechLearn Solutions',
+    role: 'Backend Developer Intern',
+    period: 'Feb 2026 – May 2026',
+    summary: 'Built backend systems powering analytics for education platforms.',
     bullets: [
       'Built KPI dashboard APIs serving as the primary analytics endpoint',
       'Reduced load times by 5x via optimized pagination and query batching',
@@ -94,18 +108,26 @@ export function Experience() {
                 </span>
               </div>
 
-              <p className="text-sm text-[rgb(var(--fg))] leading-relaxed mb-4 pb-4 border-b border-[rgba(var(--border),0.04)]">
+              <p
+                className={`text-sm text-[rgb(var(--fg))] leading-relaxed ${
+                  job.bullets.length > 0
+                    ? 'mb-4 pb-4 border-b border-[rgba(var(--border),0.04)]'
+                    : ''
+                }`}
+              >
                 {job.summary}
               </p>
 
-              <ul className="space-y-2">
-                {job.bullets.map((b, j) => (
-                  <li key={j} className="flex items-start gap-2.5 text-sm text-muted leading-relaxed">
-                    <Zap size={11} className="mt-1 flex-shrink-0" style={{ color: 'rgb(var(--accent))' }} />
-                    {b}
-                  </li>
-                ))}
-              </ul>
+              {job.bullets.length > 0 && (
+                <ul className="space-y-2">
+                  {job.bullets.map((b, j) => (
+                    <li key={j} className="flex items-start gap-2.5 text-sm text-muted leading-relaxed">
+                      <Zap size={11} className="mt-1 flex-shrink-0" style={{ color: 'rgb(var(--accent))' }} />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>

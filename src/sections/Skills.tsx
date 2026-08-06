@@ -12,15 +12,15 @@ interface SkillGroup {
 const skillGroups: SkillGroup[] = [
   {
     category: 'AI Systems',
-    items: ['LLMs', 'RAG Pipelines', 'LangGraph', 'Hugging Face', 'PyTorch', 'TensorFlow', 'OpenCV', 'Scikit-learn', 'LLM Quantization'],
+    items: ['LLMs', 'RAG Pipelines', 'LangGraph', 'Agentic Pipelines', 'Hugging Face', 'PyTorch', 'TensorFlow', 'OpenCV', 'Scikit-learn', 'LLM Quantization', 'llama.cpp', 'Structured Output'],
   },
   {
     category: 'Backend & Infrastructure',
-    items: ['FastAPI', 'Flask', 'Python', 'Node.js', 'PostgreSQL', 'MongoDB', 'Redis', 'ChromaDB', 'FAISS'],
+    items: ['FastAPI', 'Flask', 'Python', 'Node.js', 'PostgreSQL', 'MongoDB', 'Redis', 'ChromaDB', 'FAISS', 'SQLAlchemy', 'Alembic', 'Pydantic', 'Server-Sent Events'],
   },
   {
     category: 'Cloud & DevOps',
-    items: ['Azure OpenAI', 'Cognitive Search', 'App Service', 'Docker', 'CI/CD', 'Git', 'Linux'],
+    items: ['Azure OpenAI', 'Cognitive Search', 'App Service', 'Docker', 'Docker Compose', 'CI/CD', 'Git', 'Linux', 'pytest'],
   },
   {
     category: 'Frontend',

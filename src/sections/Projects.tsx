@@ -10,13 +10,22 @@ interface Project {
   tagline: string;
   description: string;
   tech: string[];
-  image: string;
+  /** Omit to render a typographic header instead of a photo. */
+  image?: string;
   github?: string;
   demo?: string;
   color: string;
 }
 
 const projects: Project[] = [
+  {
+    name: 'Claims Auto-Adjudication Engine',
+    tagline: 'Deterministic Rules + Local LLM',
+    description: 'Health insurance claims engine built during my Niva Bupa internship. A 7-gate pipeline handles policy, eligibility, waiting periods, and financial computation deterministically, while a locally hosted LLM reasons over discharge summaries. Confidence scores route anything uncertain to a human queue.',
+    tech: ['FastAPI', 'llama.cpp', 'PostgreSQL', 'React'],
+    // Theme accent token: legible in both light and dark, unlike a fixed hex.
+    color: 'rgb(var(--accent-text))',
+  },
   {
     name: 'Aura',
     tagline: 'Agentic RAG for Distributed Content',
@@ -69,8 +78,20 @@ const projects: Project[] = [
   },
 ];
 
+/**
+ * Hex accents take a 0x20 alpha suffix; the theme-token accent needs rgba().
+ * Both resolve to the same faint tint on hover.
+ */
+function hoverBorderFor(color: string): string {
+  return color.startsWith('#') ? `${color}20` : 'rgba(var(--accent),0.125)';
+}
+
+/** The decorative gradient/number keep the vivid accent; only text uses --accent-text. */
+const ACCENT_TINT = 'rgb(var(--accent))';
+
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const hoverBorder = hoverBorderFor(project.color);
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const card = cardRef.current;
@@ -94,19 +115,36 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       onMouseLeave={handleMouseLeave}
       className="group relative rounded-2xl bg-[rgb(var(--bg-elevated))] border border-[rgba(var(--border),0.06)] overflow-hidden"
       style={{ transition: 'transform 0.2s ease, border-color 0.4s ease' }}
-      onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = `${project.color}20`; }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = hoverBorder; }}
       onMouseOut={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(var(--border),0.06)'; }}
     >
-      {/* Image */}
+      {/* Image, or a typographic panel when no artwork exists */}
       <div className="relative h-44 overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          loading="lazy"
-        />
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+        ) : (
+          <div
+            className="w-full h-full flex items-end p-6"
+            style={{
+              background:
+                'linear-gradient(140deg, rgba(var(--accent),0.12) 0%, rgba(var(--accent),0.04) 55%, transparent 100%)',
+            }}
+          >
+            <span className="font-mono-data text-[11px] tracking-widest uppercase text-accent-token">
+              {project.tagline}
+            </span>
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--bg-elevated))] via-transparent to-transparent" />
-        <span className="absolute top-3 right-3 font-display font-bold text-5xl opacity-[0.06] text-white">
+        <span
+          className="absolute top-3 right-3 font-display font-bold text-5xl opacity-[0.06]"
+          style={project.image ? { color: '#fff' } : { color: ACCENT_TINT, opacity: 0.16 }}
+        >
           {String(index + 1).padStart(2, '0')}
         </span>
       </div>
@@ -115,7 +153,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <h3 className="font-display font-bold text-lg text-[rgb(var(--fg))] mb-0.5 group-hover:text-gradient transition-all duration-300">
           {project.name}
         </h3>
-        <p className="font-mono-data text-[11px] mb-3" style={{ color: project.color }}>
+        {/* Small text uses the theme token so it clears AA in both themes;
+            per-project hex colors stay on decorative accents only. */}
+        <p className="font-mono-data text-[11px] mb-3 text-accent-token">
           {project.tagline}
         </p>
         <p className="text-sm text-muted leading-relaxed mb-4">

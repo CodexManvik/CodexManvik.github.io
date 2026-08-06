@@ -42,9 +42,14 @@ const milestones: Milestone[] = [
     description: 'Built a 6-agent local-first RAG pipeline (LangGraph + FastAPI + ChromaDB + Ollama) with strong citation validation and retrieval quality tracking.',
   },
   {
-    year: 'Mar 2026 - Present',
-    title: 'Backend Engineering Intern at TechLearn',
+    year: 'Feb 2026',
+    title: 'Backend Developer Intern at TechLearn',
     description: 'Built analytics and filtered submissions APIs with cursor pagination, optimized query performance, and improved high-concurrency reliability.',
+  },
+  {
+    year: 'May 2026',
+    title: 'IT Applications Intern at Niva Bupa',
+    description: 'Built a claims auto-adjudication engine combining a 7-gate deterministic pipeline with a local LLM for clinical reasoning, with confidence-based routing to human reviewers.',
   },
 ];
 
@@ -61,10 +66,14 @@ export function Journey() {
       scrollTrigger: { trigger: titleRef.current, start: 'top 85%' },
     });
 
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     itemsRef.current.forEach((item, i) => {
       if (!item) return;
-      gsap.fromTo(item, { x: i % 2 === 0 ? -30 : 30, opacity: 0 }, {
-        x: 0, opacity: 1, duration: 0.7, ease: 'power3.out',
+      // Reduced motion gets a plain fade: no lateral travel.
+      const from = reduced ? { opacity: 0 } : { x: i % 2 === 0 ? -30 : 30, opacity: 0 };
+      gsap.fromTo(item, from, {
+        x: 0, opacity: 1, duration: reduced ? 0.3 : 0.7, ease: 'power3.out',
         scrollTrigger: { trigger: item, start: 'top 85%' },
       });
     });
@@ -85,7 +94,7 @@ export function Journey() {
         </div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div className="relative overflow-x-clip">
           {/* Vertical line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-[rgba(var(--border),0.08)] md:-translate-x-px" />
 
@@ -93,7 +102,7 @@ export function Journey() {
             <div
               key={i}
               ref={(el) => { itemsRef.current[i] = el; }}
-              className={`relative flex items-start gap-6 mb-10 md:gap-0 ${
+              className={`relative flex items-start mb-10 ${
                 i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >
