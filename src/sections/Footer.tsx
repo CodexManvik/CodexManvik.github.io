@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Github, Linkedin, Mail, ArrowUpRight, MapPin } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUpRight, MapPin, Code2 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +27,7 @@ export function Footer() {
     { icon: <Github size={18} />, label: 'GitHub', href: 'https://github.com/CodexManvik' },
     { icon: <Linkedin size={18} />, label: 'LinkedIn', href: 'https://linkedin.com/in/manvik-talwar' },
     { icon: <Mail size={18} />, label: 'Email', href: 'mailto:manvik.talwar@gmail.com' },
+    { icon: <Code2 size={18} />, label: 'LeetCode', href: 'https://leetcode.com/u/Manvik77' },
   ];
 
   return (
@@ -43,7 +44,7 @@ export function Footer() {
         </h2>
 
         <p className="mt-5 text-sm text-muted max-w-md mx-auto">
-          Open to AI/ML and backend engineering internship opportunities.
+          Open to AI/ML, Generative AI and LLM engineering roles: internships now, full-time from 2027.
         </p>
 
         <div className="flex items-center justify-center gap-2 mt-4 text-muted">

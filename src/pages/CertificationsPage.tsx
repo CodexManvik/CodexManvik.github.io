@@ -24,7 +24,7 @@ const certifications: Certification[] = [
     description:
       'Covers how generative models differ from traditional ML, where they fit in the Google Cloud stack, and which problems they are a poor fit for.',
     skills: ['Generative AI', 'Foundation Models', 'Google Cloud'],
-    verifyUrl: './certifications/Intro to Gen AI Google Cloud.pdf',
+    verifyUrl: '/certifications/Intro to Gen AI Google Cloud.pdf',
   },
   {
     title: 'Introduction to Large Language Models',
@@ -33,7 +33,7 @@ const certifications: Certification[] = [
     description:
       'How LLMs are trained and tuned, why prompt design changes output quality, and what prompt tuning costs compared to fine-tuning.',
     skills: ['LLMs', 'Prompt Tuning', 'Model Training'],
-    verifyUrl: './certifications/Introduction to Large Language Models Google Cloud.pdf',
+    verifyUrl: '/certifications/Introduction to Large Language Models Google Cloud.pdf',
   },
   {
     title: 'Generative AI: Prompt Engineering Basics',
@@ -42,7 +42,7 @@ const certifications: Certification[] = [
     description:
       'Prompt patterns that hold up in production: zero-shot and few-shot, chain of thought, and the interview pattern for pulling detail out of a model.',
     skills: ['Prompt Engineering', 'Few-shot', 'Chain of Thought'],
-    verifyUrl: './certifications/Gen AI Prompt Engineering.pdf',
+    verifyUrl: '/certifications/Gen AI Prompt Engineering.pdf',
   },
   {
     title: 'Generative AI: Introduction and Applications',
@@ -51,7 +51,7 @@ const certifications: Certification[] = [
     description:
       'Generative models across text, image, code, and audio, and the tooling around each. Ends on where the technology is applied in real products.',
     skills: ['Generative AI', 'Multimodal', 'Applied AI'],
-    verifyUrl: './certifications/Gen AI Introduction.pdf',
+    verifyUrl: '/certifications/Gen AI Introduction.pdf',
   },
   {
     title: 'Generative AI: Foundation Models and Platforms',
@@ -60,7 +60,7 @@ const certifications: Certification[] = [
     description:
       'How foundation models are pre-trained and adapted downstream, and what separates the major model platforms in practice.',
     skills: ['Foundation Models', 'Transfer Learning', 'Model Platforms'],
-    verifyUrl: './certifications/Gen AI Foundation model.pdf',
+    verifyUrl: '/certifications/Gen AI Foundation model.pdf',
   },
   {
     title: 'Introduction to Responsible AI',
@@ -69,7 +69,7 @@ const certifications: Certification[] = [
     description:
       'Why responsible AI is an engineering problem rather than a policy afterthought, and how Google structures its own AI principles.',
     skills: ['Responsible AI', 'AI Ethics', 'Model Governance'],
-    verifyUrl: './certifications/Introduction to Responsible AI Google Cloud.pdf',
+    verifyUrl: '/certifications/Introduction to Responsible AI Google Cloud.pdf',
   },
   {
     title: 'Responsible AI: Applying AI Principles with Google Cloud',
@@ -78,7 +78,7 @@ const certifications: Certification[] = [
     description:
       'Turning AI principles into operational practice: governance structures, review processes, and the tradeoffs teams hit when applying them.',
     skills: ['AI Governance', 'Fairness', 'Responsible AI'],
-    verifyUrl: './certifications/Responsible AI Applying AI Principles with Google.pdf',
+    verifyUrl: '/certifications/Responsible AI Applying AI Principles with Google.pdf',
   },
   {
     title: 'Microsoft Azure AI Fundamentals: Generative AI',
@@ -87,7 +87,7 @@ const certifications: Certification[] = [
     description:
       'Azure OpenAI Service end to end, from model deployment to prompt design and the responsible AI controls built into the platform.',
     skills: ['Azure OpenAI', 'Generative AI', 'Prompt Design'],
-    verifyUrl: './certifications/Microsoft Azure AI Fundamentals- Generative AI.pdf',
+    verifyUrl: '/certifications/Microsoft Azure AI Fundamentals- Generative AI.pdf',
   },
   {
     title: 'Microsoft Azure AI Fundamentals: Natural Language Processing',
@@ -96,7 +96,7 @@ const certifications: Certification[] = [
     description:
       'Language understanding on Azure AI Language: entity and intent recognition, sentiment, translation, and conversational speech.',
     skills: ['NLP', 'Azure AI Language', 'Text Analytics'],
-    verifyUrl: './certifications/Microsoft Azure AI Fundamentals- NLP.pdf',
+    verifyUrl: '/certifications/Microsoft Azure AI Fundamentals- NLP.pdf',
   },
   {
     title: 'Microsoft Azure AI Fundamentals: Computer Vision',
@@ -105,7 +105,7 @@ const certifications: Certification[] = [
     description:
       'Image classification, object detection, and face and OCR services on Azure AI Vision, including when a custom model beats a prebuilt one.',
     skills: ['Computer Vision', 'Azure AI Vision', 'Object Detection'],
-    verifyUrl: './certifications/Microsoft Azure AI Fundamentals- Computer Vision.pdf',
+    verifyUrl: '/certifications/Microsoft Azure AI Fundamentals- Computer Vision.pdf',
   },
   {
     title: 'Microsoft Azure AI Fundamentals: Document Intelligence and Knowledge Mining',
@@ -114,7 +114,7 @@ const certifications: Certification[] = [
     description:
       'Pulling structure out of unstructured documents with Azure AI Document Intelligence, and building searchable indexes with Cognitive Search.',
     skills: ['Document Intelligence', 'Cognitive Search', 'OCR'],
-    verifyUrl: './certifications/Microsoft Azure AI Fundamentals- Document Intelligence.pdf',
+    verifyUrl: '/certifications/Microsoft Azure AI Fundamentals- Document Intelligence.pdf',
   },
   {
     title: 'Microsoft Azure AI Fundamentals: AI Overview',
@@ -123,7 +123,7 @@ const certifications: Certification[] = [
     description:
       'The Azure AI service catalogue and how the pieces fit together, plus the workload types each service is meant to handle.',
     skills: ['Azure AI', 'Cloud AI', 'ML Workloads'],
-    verifyUrl: './certifications/Microsoft Azure AI Fundamentals- AI Overview.pdf',
+    verifyUrl: '/certifications/Microsoft Azure AI Fundamentals- AI Overview.pdf',
   },
   {
     title: 'Agentic AI',
@@ -132,7 +132,7 @@ const certifications: Certification[] = [
     description:
       'Agent architectures that plan, call tools, and keep state across steps. The design questions here fed directly into my 6-agent Aura pipeline.',
     skills: ['Agentic AI', 'Tool Calling', 'Multi-agent Systems'],
-    verifyUrl: './certifications/Agentic AI.pdf',
+    verifyUrl: '/certifications/Agentic AI.pdf',
   },
   {
     title: 'Create Your Own AI Assistant',
@@ -141,7 +141,7 @@ const certifications: Certification[] = [
     description:
       'Building a working assistant end to end: grounding it in your own data, wiring up tools, and handling conversation state.',
     skills: ['AI Assistants', 'RAG', 'Conversational AI'],
-    verifyUrl: './certifications/Create Your Own AI Assistant.pdf',
+    verifyUrl: '/certifications/Create Your Own AI Assistant.pdf',
   },
   {
     title: 'Prompt Engineering',
@@ -150,7 +150,7 @@ const certifications: Certification[] = [
     description:
       'Structured prompting for real applications, including how to constrain output format and reduce hallucination on retrieval tasks.',
     skills: ['Prompt Engineering', 'LLM Applications', 'Output Control'],
-    verifyUrl: './certifications/Prompt Engineering.pdf',
+    verifyUrl: '/certifications/Prompt Engineering.pdf',
   },
   {
     title: 'Generative AI Fundamentals',
@@ -159,7 +159,7 @@ const certifications: Certification[] = [
     description:
       'The mechanics underneath generative models: how they are trained, why they hallucinate, and what that means for building on them.',
     skills: ['Generative AI', 'Model Behaviour', 'AI Fundamentals'],
-    verifyUrl: './certifications/Gen AI Fundamentals.pdf',
+    verifyUrl: '/certifications/Gen AI Fundamentals.pdf',
   },
   {
     title: 'Generative AI for Business',
@@ -168,7 +168,7 @@ const certifications: Certification[] = [
     description:
       'Where generative AI earns its cost in a business, how to scope a pilot, and the risks worth raising before one ships.',
     skills: ['AI Strategy', 'Business Applications', 'AI Adoption'],
-    verifyUrl: './certifications/Gen AI Business.pdf',
+    verifyUrl: '/certifications/Gen AI Business.pdf',
   },
   {
     title: 'Deep Learning',
@@ -177,7 +177,7 @@ const certifications: Certification[] = [
     description:
       'Neural network architectures and the training decisions that matter: optimizers, regularization, and reading a loss curve honestly.',
     skills: ['Deep Learning', 'Neural Networks', 'Model Training'],
-    verifyUrl: './certifications/Deep Learning.pdf',
+    verifyUrl: '/certifications/Deep Learning.pdf',
   },
   {
     title: 'Managing Projects with AI',
@@ -186,7 +186,7 @@ const certifications: Certification[] = [
     description:
       'Using AI tooling inside a delivery workflow for planning, estimation, and tracking, without handing over decisions that need a human.',
     skills: ['Project Management', 'AI Tooling', 'Delivery'],
-    verifyUrl: './certifications/Managing Projects with AI.pdf',
+    verifyUrl: '/certifications/Managing Projects with AI.pdf',
   },
   {
     title: 'Introduction to Machine Learning',
@@ -195,7 +195,7 @@ const certifications: Certification[] = [
     description:
       'A 12 week proctored course covering supervised and unsupervised methods and model evaluation. Scored 71% and earned the Elite grade.',
     skills: ['Supervised Learning', 'Model Evaluation', 'Statistical ML'],
-    verifyUrl: './certifications/Machine Learning.pdf',
+    verifyUrl: '/certifications/Machine Learning.pdf',
   },
   {
     title: 'Design and Analysis of Algorithms',
@@ -204,7 +204,7 @@ const certifications: Certification[] = [
     description:
       'An 8 week proctored course on algorithm design and complexity analysis. Scored 75%, placing in the top 5% of 1,696 certified candidates.',
     skills: ['Algorithms', 'Complexity Analysis', 'Problem Solving'],
-    verifyUrl: './certifications/Design and Analysis of Algorithms.pdf',
+    verifyUrl: '/certifications/Design and Analysis of Algorithms.pdf',
   },
   {
     title: 'Programming, Data Structures and Algorithms using Python',
@@ -213,7 +213,7 @@ const certifications: Certification[] = [
     description:
       'An 8 week proctored course on core data structures and their Python implementations, assessed by assignments and a written exam.',
     skills: ['Python', 'Data Structures', 'Algorithms'],
-    verifyUrl: './certifications/Programming, Data Structures and Algorithms using Python.pdf',
+    verifyUrl: '/certifications/Programming, Data Structures and Algorithms using Python.pdf',
   },
   {
     title: 'Introduction to Back-End Development',
@@ -222,7 +222,7 @@ const certifications: Certification[] = [
     description:
       'Server side fundamentals and how the backend layers sit behind a web application, plus where each common framework is a sensible choice.',
     skills: ['Backend', 'Web Architecture', 'HTTP'],
-    verifyUrl: './certifications/Backend Development.pdf',
+    verifyUrl: '/certifications/Backend Development.pdf',
   },
   {
     title: 'Programming in Python',
@@ -231,7 +231,7 @@ const certifications: Certification[] = [
     description:
       'Python for production work: data structures, object oriented design, error handling, and testing.',
     skills: ['Python', 'OOP', 'Testing'],
-    verifyUrl: './certifications/Programming in Python.pdf',
+    verifyUrl: '/certifications/Programming in Python.pdf',
   },
   {
     title: 'Red Hat System Administration I (RH124)',
@@ -240,7 +240,7 @@ const certifications: Certification[] = [
     description:
       'Linux administration from the command line: users and permissions, processes, storage, and shell scripting on RHEL.',
     skills: ['Linux', 'RHEL', 'Shell Scripting'],
-    verifyUrl: './certifications/Red Hat System Administration I (RH124).pdf',
+    verifyUrl: '/certifications/Red Hat System Administration I (RH124).pdf',
   },
   {
     title: 'Red Hat System Administration II (RH134)',
@@ -249,7 +249,7 @@ const certifications: Certification[] = [
     description:
       'The second RHEL course, covering networking, storage management, SELinux, and task automation.',
     skills: ['Linux', 'Networking', 'SELinux'],
-    verifyUrl: './certifications/Red Hat System Administration II (RH134).pdf',
+    verifyUrl: '/certifications/Red Hat System Administration II (RH134).pdf',
   },
   {
     title: 'Agile Software Development',
@@ -258,7 +258,7 @@ const certifications: Certification[] = [
     description:
       'How agile teams actually run: iteration planning, estimation, and the practices that survive contact with a real backlog.',
     skills: ['Agile', 'Scrum', 'Iterative Delivery'],
-    verifyUrl: './certifications/Agile Software Development.pdf',
+    verifyUrl: '/certifications/Agile Software Development.pdf',
   },
   {
     title: 'Agile with Atlassian Jira',
@@ -267,7 +267,7 @@ const certifications: Certification[] = [
     description:
       'Running a board in Jira: configuring workflows, managing a backlog, and reading burndown and velocity reports.',
     skills: ['Jira', 'Agile Planning', 'Workflow Configuration'],
-    verifyUrl: './certifications/Agile with Atlassian Jira.pdf',
+    verifyUrl: '/certifications/Agile with Atlassian Jira.pdf',
   },
 ];
 

@@ -1,0 +1,92 @@
+# Manvik Talwar — AI/ML Engineer
+
+> Generative AI, LLM Systems, RAG & Agentic AI. B.Tech CSE (AI & ML), Manipal University Jaipur (Aug 2023 – Aug 2027). India. Open to AI/ML, Generative AI and LLM engineering internships now and full-time roles from 2027.
+
+- Email: manvik.talwar@gmail.com
+- Portfolio: https://codexmanvik.github.io/
+- GitHub: https://github.com/CodexManvik
+- LinkedIn: https://www.linkedin.com/in/manvik-talwar
+- LeetCode: https://leetcode.com/u/Manvik77
+- Resume (PDF): https://codexmanvik.github.io/manvik-talwar-resume.pdf
+
+## Summary
+
+AI/ML engineer with three internships shipping LLM systems (local-LLM claims adjudication, enterprise RAG, production APIs). Builds agentic and RAG systems with measured evaluation, deterministic guardrails and human-in-the-loop safety.
+
+## Technical skills
+
+- Languages: Python, SQL, TypeScript, JavaScript
+- Generative AI: LLMs, RAG, Agentic AI, LangGraph, LangChain, Prompt Engineering, Tool Calling, MCP (Model Context Protocol), Embeddings, Vector Search, LLM Evaluation
+- ML & Deep Learning: PyTorch, TensorFlow, Keras, Hugging Face, scikit-learn, CNNs, Computer Vision, OpenCV, MediaPipe, NLP
+- LLM Inference: llama.cpp, Ollama, GBNF Constrained Decoding, Quantization (GGUF), Azure OpenAI, OpenAI API, faster-whisper
+- Backend & Data: FastAPI, REST, WebSockets, Pydantic, SQLAlchemy, PostgreSQL, MySQL, MongoDB, Redis, ChromaDB, LanceDB
+- MLOps & Cloud: Docker, Kubernetes, Prometheus, CI/CD, Git, Linux, pytest, Azure (App Service, Cognitive Search), React, Next.js
+
+## Professional experience
+
+### AI Engineering Intern — Niva Bupa Health Insurance (May 2026 – Jul 2026)
+
+- Built a claims auto-adjudication engine for the ReAssure 3.0 health policy: a 7-gate pipeline (policy, member, coverage, waiting period, exclusion, financial, state update) mixing deterministic rules with a local Gemma LLM on llama.cpp.
+- Forced schema-valid JSON output with GBNF grammar-constrained decoding and built 4-tier confidence routing that sends uncertain claims to operations, clinical or senior-auditor review queues instead of forcing an automated verdict.
+- Built a DAG rule planner (Kahn's topological sort) for audit-replayable plans, async FastAPI with per-gate SSE streaming, OCR + LLM extraction from discharge summaries, and a 67-test pytest suite that runs without a live LLM.
+
+### Backend Engineering Intern — TechLearn (Feb 2026 – May 2026)
+
+- Shipped the Dashboard Stats API serving real-time KPIs to educators, now the primary analytics endpoint in production.
+- Replaced offset pagination with cursor-based pagination on submission retrieval, removing deep-page scan cost; added composite indexes and restructured trend queries to cut redundant aggregation passes.
+
+### AI Development Intern — Path Infotech (Jun 2025 – Aug 2025)
+
+- Deployed an enterprise RAG assistant on company servers for internal knowledge retrieval, building the semantic search pipeline with custom Azure Cognitive Search indexing skillsets for PDFs.
+- Built a citation layer backed by MySQL tagging so every generated answer rendered clickable source references, making outputs auditable for non-technical staff.
+
+## Projects
+
+### IntelliOps: Agentic AIOps Platform — Deloitte Capstone Programme 2026
+
+Repository: https://github.com/CodexManvik/intelliops
+
+- Built a 7-service, event-driven AIOps platform (Python, FastAPI, Redis Streams, PostgreSQL, Prometheus, React) that collapses alert storms into incidents, ranks root causes and runs governed, reversible remediation on Kubernetes.
+- On a live cluster: 75% alert-noise reduction, 41 s median time-to-fix, 21/30 fixes verified healthy with automatic rollback on failure; autonomy rose from 0% to 76.7% of runs as playbooks earned it from verified outcomes. 833 automated tests.
+- Designed robust anomaly detection (median/MAD z-scores per metric and hour-of-day, persistence-gated) and confined the LLM agent to a closed 7-verb action vocabulary behind a synchronous, fail-closed human-approval gate with a full audit trail.
+
+### DWT-CNN Invisible Image Watermarking — TensorFlow
+
+Repository: https://github.com/CodexManvik/Deep-Learning-Based-Watermarking
+
+- First-authored an end-to-end differentiable encode-attack-decode CNN embedding a 256-bit payload in the Haar DWT LL subband; 4.1M parameters, ~18 ms inference per image on an RTX 3050. Manuscript in preparation.
+- Made JPEG differentiable (straight-through DCT quantization) in a 6-attack simulator; trained on 50K mixed-domain images to 37.3 dB PSNR, 0.97 SSIM, 3.2% BER, with 2.4–7x lower BER than a classical DWT baseline.
+
+### Agentic RAG for Distributed Content — LangGraph
+
+Repository: https://github.com/CodexManvik/Agentic-Rag-for-Distributed-Content
+
+- Built a multi-agent LangGraph pipeline (plan, retrieve, adequacy check, reformulate, synthesize, citation validation) over hybrid vector + BM25 retrieval, abstaining instead of hallucinating when evidence is weak or a query is out of policy.
+- Wrote an evaluation harness (Hit@k, MRR, citation precision, abstain precision/recall); tuned profile reached 0.690 Hit@k and 0.549 MRR at 28.8 s median latency on local models and blocked all prompt-injection test queries.
+
+### Aethel: Local-First AI Agent Runtime — llama.cpp, FastAPI, Tauri, LanceDB (in development)
+
+Repository: https://github.com/CodexManvik/Aethel
+
+- Local desktop agent with permissioned, rollback-safe tools; Reflective Skill Memory keeps or retires skills by success rate.
+
+### Other projects
+
+- FloatChat-AI (https://github.com/CodexManvik/FloatChat-AI): NL-to-SQL and semantic search over ARGO ocean data; Smart India Hackathon 2025 national semi-finalist.
+- Interview Mirror (https://github.com/CodexManvik/Interview-Mirror): real-time AI interview coach with MediaPipe landmark tracking, Gemini, Whisper and TTS.
+- MusicGen (https://github.com/CodexManvik/automatic-music-generation): transformer and LSTM-based MIDI music generation.
+
+## Education
+
+- B.Tech, Computer Science & Engineering (AI & ML), Manipal University Jaipur, Aug 2023 – Aug 2027
+
+## Achievements
+
+- Smart India Hackathon 2025 National Semi-Finalist (FloatChat-AI).
+- 4x Student Excellence Award, Manipal University Jaipur.
+- Dell x GDG Ideathon Finalist.
+- NPTEL Topper.
+
+## Certifications
+
+Google Cloud (Introduction to Generative AI, Introduction to Large Language Models, Responsible AI), Microsoft Azure AI Fundamentals (Generative AI, NLP, Computer Vision, Document Intelligence), IBM Generative AI (Prompt Engineering, Foundation Models), IIT Madras NPTEL (Machine Learning, Design and Analysis of Algorithms, DSA in Python), Meta Back-End Development, Red Hat System Administration I & II (RH124, RH134). Full list: https://codexmanvik.github.io/certifications/

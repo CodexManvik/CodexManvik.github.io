@@ -14,17 +14,17 @@ const milestones: Milestone[] = [
   {
     year: '2023',
     title: 'Started at Manipal University Jaipur',
-    description: 'Began B.Tech in CSE (AI/ML). Built a strong foundation in ML systems, backend engineering, and production-focused AI.',
+    description: 'Began B.Tech in CSE (AI & ML). Built a strong foundation in ML systems, backend engineering, and production-focused AI.',
   },
   {
     year: '2024',
     title: 'First Deep Learning Project',
-    description: 'Built a CNN + DWT watermarking system with PSNR > 40dB and 96% extraction robustness across compression/noise/cropping attacks.',
+    description: 'Started a DWT-CNN invisible watermarking system, which grew into a differentiable encode-attack-decode network reaching 37.3 dB PSNR and 0.97 SSIM.',
   },
   {
     year: '2025',
-    title: 'AI Intern at Path Infotech',
-    description: 'Architected and deployed "Sofia," an enterprise RAG chatbot on Azure OpenAI + Cognitive Search, serving 100+ concurrent users at 99.9% uptime.',
+    title: 'AI Development Intern at Path Infotech',
+    description: 'Deployed "Sofia," an enterprise RAG assistant built on Azure Cognitive Search, with a citation layer that makes every answer auditable.',
   },
   {
     year: '2025',
@@ -33,23 +33,28 @@ const milestones: Milestone[] = [
   },
   {
     year: '2025',
-    title: 'SIH 2025 + Awards',
-    description: 'Selected for SIH 2025 All India Round, became Dell x Google Developer Group Ideathon finalist, and earned multiple Student Excellence Awards.',
+    title: 'SIH 2025 National Semi-Finalist',
+    description: 'FloatChat-AI reached the Smart India Hackathon 2025 national semi-finals. Also a Dell x GDG Ideathon finalist and a 4x Student Excellence Award winner.',
   },
   {
     year: '2026',
     title: 'Agentic RAG for Distributed Content',
-    description: 'Built a 6-agent local-first RAG pipeline (LangGraph + FastAPI + ChromaDB + Ollama) with strong citation validation and retrieval quality tracking.',
+    description: 'Built a multi-agent LangGraph RAG pipeline over hybrid vector + BM25 retrieval, with an evaluation harness and citation validation.',
   },
   {
     year: 'Feb 2026',
-    title: 'Backend Developer Intern at TechLearn',
-    description: 'Built analytics and filtered submissions APIs with cursor pagination, optimized query performance, and improved high-concurrency reliability.',
+    title: 'Backend Engineering Intern at TechLearn',
+    description: 'Shipped the Dashboard Stats API, now the primary analytics endpoint in production, and moved submission retrieval to cursor-based pagination.',
   },
   {
     year: 'May 2026',
-    title: 'IT Applications Intern at Niva Bupa',
+    title: 'AI Engineering Intern at Niva Bupa',
     description: 'Built a claims auto-adjudication engine combining a 7-gate deterministic pipeline with a local LLM for clinical reasoning, with confidence-based routing to human reviewers.',
+  },
+  {
+    year: '2026',
+    title: 'Deloitte Capstone Programme: IntelliOps',
+    description: 'Built IntelliOps, an agentic AIOps platform: 75% alert-noise reduction and 41 s median time-to-fix on a live Kubernetes cluster, with governed, reversible remediation.',
   },
 ];
 

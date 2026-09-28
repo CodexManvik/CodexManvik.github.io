@@ -11,20 +11,28 @@ interface SkillGroup {
 
 const skillGroups: SkillGroup[] = [
   {
-    category: 'AI Systems',
-    items: ['LLMs', 'RAG Pipelines', 'LangGraph', 'Agentic Pipelines', 'Hugging Face', 'PyTorch', 'TensorFlow', 'OpenCV', 'Scikit-learn', 'LLM Quantization', 'llama.cpp', 'Structured Output'],
+    category: 'Generative AI',
+    items: ['LLMs', 'RAG', 'Agentic AI', 'LangGraph', 'LangChain', 'Prompt Engineering', 'Tool Calling', 'MCP', 'Embeddings', 'Vector Search', 'LLM Evaluation'],
   },
   {
-    category: 'Backend & Infrastructure',
-    items: ['FastAPI', 'Flask', 'Python', 'Node.js', 'PostgreSQL', 'MongoDB', 'Redis', 'ChromaDB', 'FAISS', 'SQLAlchemy', 'Alembic', 'Pydantic', 'Server-Sent Events'],
+    category: 'ML & Deep Learning',
+    items: ['PyTorch', 'TensorFlow', 'Keras', 'Hugging Face', 'scikit-learn', 'CNNs', 'Computer Vision', 'OpenCV', 'MediaPipe', 'NLP'],
   },
   {
-    category: 'Cloud & DevOps',
-    items: ['Azure OpenAI', 'Cognitive Search', 'App Service', 'Docker', 'Docker Compose', 'CI/CD', 'Git', 'Linux', 'pytest'],
+    category: 'LLM Inference',
+    items: ['llama.cpp', 'Ollama', 'GBNF Constrained Decoding', 'Quantization (GGUF)', 'Azure OpenAI', 'OpenAI API', 'faster-whisper'],
+  },
+  {
+    category: 'Backend & Data',
+    items: ['Python', 'SQL', 'FastAPI', 'REST', 'WebSockets', 'Server-Sent Events', 'Pydantic', 'SQLAlchemy', 'PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'ChromaDB', 'LanceDB'],
+  },
+  {
+    category: 'MLOps & Cloud',
+    items: ['Docker', 'Kubernetes', 'Prometheus', 'CI/CD', 'Git', 'Linux', 'pytest', 'Azure App Service', 'Azure Cognitive Search'],
   },
   {
     category: 'Frontend',
-    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Streamlit'],
+    items: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Streamlit'],
   },
 ];
 

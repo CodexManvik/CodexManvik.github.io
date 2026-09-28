@@ -19,61 +19,81 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: 'IntelliOps',
+    tagline: 'Agentic AIOps Platform · Deloitte Capstone 2026',
+    description: 'A 7-service, event-driven AIOps platform that collapses alert storms into incidents, ranks root causes and runs governed, reversible remediation on Kubernetes. On a live cluster: 75% alert-noise reduction, 41 s median time-to-fix, and autonomy rising from 0% to 76.7% of runs as playbooks earned it from verified outcomes. The LLM agent is confined to a closed 7-verb action vocabulary behind a fail-closed human-approval gate. 833 automated tests.',
+    tech: ['FastAPI', 'Redis Streams', 'PostgreSQL', 'Prometheus', 'Kubernetes', 'React'],
+    github: 'https://github.com/CodexManvik/intelliops',
+    color: 'rgb(var(--accent-text))',
+  },
+  {
     name: 'Claims Auto-Adjudication Engine',
-    tagline: 'Deterministic Rules + Local LLM',
-    description: 'Health insurance claims engine built during my Niva Bupa internship. A 7-gate pipeline handles policy, eligibility, waiting periods, and financial computation deterministically, while a locally hosted LLM reasons over discharge summaries. Confidence scores route anything uncertain to a human queue.',
-    tech: ['FastAPI', 'llama.cpp', 'PostgreSQL', 'React'],
+    tagline: 'Deterministic Rules + Local LLM · Niva Bupa',
+    description: 'Health insurance claims engine built during my Niva Bupa internship. A 7-gate pipeline handles policy, member, coverage, waiting-period, exclusion and financial checks deterministically, while a local Gemma LLM on llama.cpp reasons over discharge summaries with GBNF-constrained JSON output. 4-tier confidence routing sends uncertain claims to human review queues.',
+    tech: ['FastAPI', 'llama.cpp', 'GBNF', 'PostgreSQL', 'React'],
     // Theme accent token: legible in both light and dark, unlike a fixed hex.
     color: 'rgb(var(--accent-text))',
   },
   {
     name: 'Aura',
     tagline: 'Agentic RAG for Distributed Content',
-    description: 'A modular agentic retrieval system with 6 specialized agents that route queries through retrieve, validate, synthesize, and finalize stages. Runs locally with end-to-end latency under 30 seconds.',
-    tech: ['LangGraph', 'FastAPI', 'ChromaDB', 'Ollama'],
-    image: './project-aura.jpg',
+    description: 'Multi-agent LangGraph pipeline (plan, retrieve, adequacy check, reformulate, synthesize, citation validation) over hybrid vector + BM25 retrieval that abstains instead of hallucinating when evidence is weak. Evaluated with Hit@k, MRR and citation precision: 0.690 Hit@k and 0.549 MRR on local models, blocking every prompt-injection test query.',
+    tech: ['LangGraph', 'FastAPI', 'ChromaDB', 'BM25', 'Ollama'],
+    image: '/project-aura.jpg',
     github: 'https://github.com/CodexManvik/Agentic-Rag-for-Distributed-Content',
     color: '#d4860f',
+  },
+  {
+    name: 'Deep Watermarking',
+    tagline: 'DWT-CNN Invisible Image Watermarking',
+    description: 'First-authored, end-to-end differentiable encode-attack-decode CNN that embeds a 256-bit payload in the Haar DWT LL subband, with differentiable JPEG in a 6-attack simulator. Trained on 50K images to 37.3 dB PSNR, 0.97 SSIM and 3.2% BER, with 2.4–7x lower BER than a classical DWT baseline. Manuscript in preparation.',
+    tech: ['TensorFlow', 'Keras', 'OpenCV'],
+    image: '/project-watermark.jpg',
+    github: 'https://github.com/CodexManvik/Deep-Learning-Based-Watermarking',
+    color: '#c45a1f',
+  },
+  {
+    name: 'Sofia',
+    tagline: 'Enterprise RAG Assistant · Path Infotech',
+    description: 'Enterprise RAG assistant deployed on company servers for internal knowledge retrieval, with a semantic search pipeline built on custom Azure Cognitive Search indexing skillsets for PDFs and a citation layer so every answer links back to its sources.',
+    tech: ['Azure OpenAI', 'Cognitive Search', 'MySQL', 'Flask'],
+    image: '/project-sofia.jpg',
+    github: 'https://github.com/CodexManvik/Sofia-A-Chatbot-For-Realtime-Document-Insights',
+    color: '#c66e0f',
+  },
+  {
+    name: 'FloatChat',
+    tagline: 'Natural Language over Ocean Data · SIH 2025',
+    description: 'Smart India Hackathon 2025 national semi-finalist. NL-to-SQL and semantic search over ARGO ocean datasets, replacing hand-written SQL with a conversational RAG interface over 100k+ records.',
+    tech: ['Qwen LLM', 'PostgreSQL', 'ChromaDB', 'Streamlit'],
+    image: '/project-floatchat.jpg',
+    github: 'https://github.com/CodexManvik/FloatChat-AI',
+    color: '#b85a2a',
+  },
+  {
+    name: 'Aethel',
+    tagline: 'Local-First AI Agent Runtime · In Development',
+    description: 'A local desktop agent with permissioned, rollback-safe tools. Reflective Skill Memory keeps or retires learned skills based on their measured success rate.',
+    tech: ['llama.cpp', 'FastAPI', 'Tauri', 'LanceDB'],
+    github: 'https://github.com/CodexManvik/Aethel',
+    color: 'rgb(var(--accent-text))',
   },
   {
     name: 'Interview Mirror',
     tagline: 'Real-time AI Interview Coach',
     description: 'Tracks 543 body landmarks at under 100ms latency to analyze posture, gestures, and stress signals. Integrates Gemini, Whisper, and TTS for comprehensive interview feedback.',
     tech: ['MediaPipe', 'FastAPI', 'OpenCV', 'React'],
-    image: './project-interview.jpg',
+    image: '/project-interview.jpg',
+    github: 'https://github.com/CodexManvik/Interview-Mirror',
     color: '#a83f39',
-  },
-  {
-    name: 'Sofia',
-    tagline: 'Enterprise AI Assistant',
-    description: 'Production RAG chatbot deployed on Azure serving 100+ concurrent users at 99.9% uptime. Features full citation tracking and an optimized semantic search pipeline for enterprise knowledge bases.',
-    tech: ['Azure OpenAI', 'Cognitive Search', 'Flask', 'Docker'],
-    image: './project-sofia.jpg',
-    github: 'https://github.com/CodexManvik',
-    color: '#c66e0f',
-  },
-  {
-    name: 'FloatChat',
-    tagline: 'Natural Language over Ocean Data',
-    description: 'Replaces SQL querying for ARGO ocean datasets with a conversational RAG interface. Handles 100k+ records with sub-2-second response using Qwen LLM and vector search.',
-    tech: ['Qwen LLM', 'PostgreSQL', 'ChromaDB', 'Streamlit'],
-    image: './project-floatchat.jpg',
-    color: '#b85a2a',
-  },
-  {
-    name: 'Deep Watermarking',
-    tagline: 'CNN + DWT Invisible Watermarking',
-    description: 'Deep learning model for invisible image watermarking achieving PSNR above 40dB with 96% robustness. Uses a hybrid CNN-DWT architecture resistant to compression and noise attacks.',
-    tech: ['PyTorch', 'OpenCV'],
-    image: './project-watermark.jpg',
-    color: '#c45a1f',
   },
   {
     name: 'MusicGen',
     tagline: 'AI Music Generation',
     description: 'Generates original music compositions from text prompts using transformer and LSTM-based sequence modeling. Produces structured MIDI outputs with coherent melody, harmony, and rhythm.',
     tech: ['PyTorch', 'MIDI', 'Streamlit'],
-    image: './project-music.jpg',
+    image: '/project-music.jpg',
+    github: 'https://github.com/CodexManvik/automatic-music-generation',
     color: '#d4860f',
   },
 ];
@@ -123,7 +143,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {project.image ? (
           <img
             src={project.image}
-            alt={project.name}
+            alt={`${project.name} — ${project.tagline}`}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
@@ -176,7 +196,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               className="inline-flex items-center gap-1.5 text-xs font-medium text-muted hover:text-[rgb(var(--fg))] transition-colors"
               data-hover="true">
               <Github size={13} />
-              Code
+              <span>Code<span className="sr-only"> for {project.name} on GitHub</span></span>
             </a>
           )}
           {project.demo && (
@@ -226,7 +246,7 @@ export function Projects() {
             Projects & <span className="text-gradient">Research</span>
           </h2>
           <p className="mt-4 text-muted max-w-xl text-sm leading-relaxed">
-            A collection of things I have built — from agentic RAG pipelines to real-time computer vision systems. Each one taught me something the docs never could.
+            From an agentic AIOps platform and local-LLM claims adjudication to agentic RAG and deep-learning research. Each one taught me something the docs never could.
           </p>
         </div>
 

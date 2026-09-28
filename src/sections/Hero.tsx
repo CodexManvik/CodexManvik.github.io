@@ -140,16 +140,16 @@ export function Hero() {
 
       <div className="relative z-[3] text-center px-6 max-w-3xl mx-auto">
         <p ref={taglineRef} className="font-mono-data text-xs tracking-widest uppercase mb-6" style={{ color: 'rgb(var(--accent))' }}>
-          Manipal University Jaipur — B.Tech CSE (AI & ML)
+          AI/ML Engineer · Generative AI, LLMs, RAG & Agentic AI
         </p>
         <h1 ref={titleRef} className="font-display font-bold uppercase tracking-tighter leading-[0.92]"
           style={{ fontSize: 'clamp(2.8rem, 7vw, 6rem)' }}>
           <span className="block text-[rgb(var(--fg))]">Manvik</span>
           <span className="block text-gradient">Talwar</span>
         </h1>
-        <p ref={proofRef} className="mt-7 text-muted font-light tracking-wide max-w-lg mx-auto leading-relaxed"
+        <p ref={proofRef} className="mt-7 text-muted font-light tracking-wide max-w-xl mx-auto leading-relaxed"
           style={{ fontSize: 'clamp(0.9rem, 1.3vw, 1.05rem)' }}>
-          I enjoy turning messy real-world problems into AI systems that people actually want to use.
+          I build LLM, RAG and agentic AI systems with measured evaluation, deterministic guardrails and human-in-the-loop safety. B.Tech CSE (AI & ML) at Manipal University Jaipur, three AI and backend internships, and IntelliOps for the Deloitte Capstone Programme.
         </p>
 
         <div ref={ctaRef} className="mt-10 flex items-center justify-center gap-3 flex-wrap">
@@ -165,7 +165,7 @@ export function Hero() {
             <Github size={15} />
             GitHub
           </a>
-          <a href="./manvik-talwar-resume.pdf" download
+          <a href="/manvik-talwar-resume.pdf" download
             className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-medium rounded-full text-white"
             style={{ backgroundColor: 'rgb(var(--accent))' }}
             data-hover="true">

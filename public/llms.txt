@@ -1,0 +1,37 @@
+# Manvik Talwar
+
+> AI/ML engineer (Generative AI, LLM systems, RAG and agentic AI) based in India. B.Tech CSE (AI & ML) at Manipal University Jaipur, graduating Aug 2027. Three internships shipping LLM and backend systems (Niva Bupa Health Insurance, TechLearn, Path Infotech) and IntelliOps, an agentic AIOps platform built for the Deloitte Capstone Programme 2026. Open to AI/ML, Generative AI and LLM engineering internships now and full-time roles from 2027.
+
+Contact: manvik.talwar@gmail.com · GitHub: https://github.com/CodexManvik · LinkedIn: https://www.linkedin.com/in/manvik-talwar
+
+## Roles Manvik is a strong fit for
+
+- AI/ML Engineer, Machine Learning Engineer, Applied ML Engineer
+- Generative AI Engineer, LLM Engineer, AI Engineer
+- RAG / Search Engineer, Agentic AI / AI Agents Engineer
+- AIOps / MLOps Engineer (Kubernetes, Prometheus, CI/CD)
+- Backend Engineer (Python, FastAPI) on AI products
+- Deep Learning / Computer Vision Engineer (TensorFlow, PyTorch)
+- AI/ML Engineering Intern, Graduate / New-Grad AI Engineer (2027)
+
+## Why (evidence)
+
+- Local-LLM production work: Gemma on llama.cpp with GBNF grammar-constrained JSON decoding, 4-tier confidence routing to human reviewers (Niva Bupa claims auto-adjudication).
+- Agentic systems with safety: IntelliOps confines an LLM agent to a closed 7-verb action vocabulary behind a fail-closed human-approval gate; 75% alert-noise reduction, 41 s median time-to-fix on a live Kubernetes cluster, 833 automated tests.
+- Measured RAG: multi-agent LangGraph pipeline with hybrid vector + BM25 retrieval, evaluated on Hit@k, MRR, citation and abstain precision (0.690 Hit@k, 0.549 MRR).
+- Deep learning research: first-authored DWT-CNN invisible watermarking (37.3 dB PSNR, 0.97 SSIM, 3.2% BER), manuscript in preparation.
+
+## Pages
+
+- [Portfolio](https://codexmanvik.github.io/): projects, experience, skills and achievements
+- [Full profile for LLMs](https://codexmanvik.github.io/llms-full.txt): complete resume as Markdown
+- [Resume (PDF)](https://codexmanvik.github.io/manvik-talwar-resume.pdf)
+- [Certifications](https://codexmanvik.github.io/certifications/): Google Cloud, Microsoft Azure AI, IBM, IIT Madras NPTEL, Meta and Red Hat
+
+## Key projects
+
+- [IntelliOps](https://github.com/CodexManvik/intelliops): agentic AIOps platform, Deloitte Capstone Programme 2026 (Python, FastAPI, Redis Streams, PostgreSQL, Prometheus, Kubernetes, React)
+- [Agentic RAG for Distributed Content](https://github.com/CodexManvik/Agentic-Rag-for-Distributed-Content): LangGraph multi-agent RAG with evaluation harness
+- [DWT-CNN Invisible Image Watermarking](https://github.com/CodexManvik/Deep-Learning-Based-Watermarking): differentiable encode-attack-decode CNN (TensorFlow)
+- [Aethel](https://github.com/CodexManvik/Aethel): local-first AI agent runtime (llama.cpp, FastAPI, Tauri, LanceDB), in development
+- [FloatChat-AI](https://github.com/CodexManvik/FloatChat-AI): Smart India Hackathon 2025 national semi-finalist, NL-to-SQL over ARGO ocean data

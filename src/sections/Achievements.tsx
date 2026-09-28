@@ -12,8 +12,8 @@ const achievements = [
     icon: <Award size={20} />,
   },
   {
-    title: 'SIH 2025 All India Round',
-    description: 'Selected for Smart India Hackathon 2025 All India Round.',
+    title: 'SIH 2025 National Semi-Finalist',
+    description: 'Smart India Hackathon 2025 national semi-finalist with FloatChat-AI: NL-to-SQL and semantic search over ARGO ocean data.',
     icon: <Trophy size={20} />,
   },
   {
@@ -25,6 +25,11 @@ const achievements = [
     title: 'Google Big Code Challenge',
     description: 'Ranked top 15,000 across India.',
     icon: <Code2 size={20} />,
+  },
+  {
+    title: 'NPTEL Topper',
+    description: 'Topped an NPTEL course, the national online learning programme run by the IITs and IISc.',
+    icon: <Award size={20} />,
   },
 ];
 
