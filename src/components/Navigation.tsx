@@ -5,7 +5,7 @@ import { Sun, Moon } from 'lucide-react';
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
   const location = useLocation();
   const isHome = location.pathname === '/';
 
@@ -75,7 +75,8 @@ export function Navigation() {
             data-hover="true"
             aria-label="Toggle theme"
           >
-            {theme === 'light' ? <Moon size={15} /> : <Sun size={15} />}
+            <Moon size={15} className="dark:hidden" />
+            <Sun size={15} className="hidden dark:block" />
           </button>
         </div>
       </div>

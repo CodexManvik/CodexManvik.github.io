@@ -82,7 +82,7 @@ export function Footer() {
         <div className="mt-16 pt-5 border-t border-[rgba(var(--border),0.04)] flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="font-display font-bold text-sm text-[rgb(var(--fg))]">MT<span style={{ color: 'rgb(var(--accent))' }}>.</span></p>
           <p className="text-xs text-subtle">Manvik Talwar — AI/ML Engineer</p>
-          <p className="font-mono-data text-xs text-subtle">© {new Date().getFullYear()}</p>
+          <p className="font-mono-data text-xs text-subtle" suppressHydrationWarning>© {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>

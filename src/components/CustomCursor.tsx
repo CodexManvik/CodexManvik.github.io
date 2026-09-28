@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { useTheme } from '../context/ThemeContext';
 
 export function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
@@ -7,9 +6,7 @@ export function CustomCursor() {
   const posRef = useRef({ x: 0, y: 0 });
   const targetRef = useRef({ x: 0, y: 0 });
   const isHoveringRef = useRef(false);
-  const { theme } = useTheme();
-
-  const color = theme === 'light' ? '#1a1a1a' : '#ffffff';
+  const color = 'rgb(var(--fg))';
 
   useEffect(() => {
     const dot = dotRef.current;

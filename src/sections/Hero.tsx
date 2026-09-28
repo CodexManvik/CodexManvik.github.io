@@ -166,8 +166,8 @@ export function Hero() {
             GitHub
           </a>
           <a href="/manvik-talwar-resume.pdf" download
-            className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-medium rounded-full text-white"
-            style={{ backgroundColor: 'rgb(var(--accent))' }}
+            className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-medium rounded-full"
+            style={{ backgroundColor: 'rgb(var(--accent-text))', color: 'rgb(var(--bg))' }}
             data-hover="true">
             <Download size={15} />
             Resume
