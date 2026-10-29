@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Github, Download, FolderGit2 } from 'lucide-react';
+import { useReveal } from '../lib/reveal';
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const taglineRef = useRef<HTMLParagraphElement>(null);
@@ -114,15 +116,13 @@ export function Hero() {
     };
   }, []);
 
-  useEffect(() => {
-    const tl = gsap.timeline({ delay: 0.3 });
-    tl.fromTo(titleRef.current, { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: 'power4.out' })
-      .fromTo(taglineRef.current, { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out' }, '-=0.5')
-      .fromTo(proofRef.current, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' }, '-=0.3')
-      .fromTo(ctaRef.current, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }, '-=0.2');
-    return () => { tl.kill(); };
-  }, []);
+  useReveal(sectionRef, () => {
+    gsap.timeline({ delay: 0.3 })
+      .from(titleRef.current, { y: 50, opacity: 0, duration: 1, ease: 'power4.out' })
+      .from(taglineRef.current, { y: 25, opacity: 0, duration: 0.7, ease: 'power3.out' }, '-=0.5')
+      .from(proofRef.current, { y: 20, opacity: 0, duration: 0.6, ease: 'power3.out' }, '-=0.3')
+      .from(ctaRef.current, { y: 20, opacity: 0, duration: 0.5, ease: 'power3.out' }, '-=0.2');
+  });
 
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -131,6 +131,7 @@ export function Hero() {
   return (
     <section
       id="hero"
+      ref={sectionRef}
       className="relative w-full min-h-[100dvh] flex items-center justify-center overflow-hidden"
       style={{ background: 'var(--hero-gradient)' }}
     >

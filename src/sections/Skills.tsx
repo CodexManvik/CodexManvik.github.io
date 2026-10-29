@@ -1,8 +1,5 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from 'react';
+import { reveal, useReveal } from '../lib/reveal';
 
 interface SkillGroup {
   category: string;
@@ -41,22 +38,11 @@ export function Skills() {
   const titleRef = useRef<HTMLDivElement>(null);
   const groupsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useReveal(sectionRef, () => {
     if (!titleRef.current || !groupsRef.current) return;
-
-    gsap.fromTo(titleRef.current.children, { y: 40, opacity: 0 }, {
-      y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: titleRef.current, start: 'top 85%' },
-    });
-
-    const groups = groupsRef.current.querySelectorAll('.skill-group');
-    gsap.fromTo(groups, { y: 40, opacity: 0 }, {
-      y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: groupsRef.current, start: 'top 80%' },
-    });
-
-    return () => { ScrollTrigger.getAll().forEach((t) => t.kill()); };
-  }, []);
+    reveal(titleRef.current.children, titleRef.current, { y: 40 }, { duration: 0.8, stagger: 0.1 });
+    reveal(groupsRef.current.querySelectorAll('.skill-group'), groupsRef.current, { y: 40 }, { duration: 0.5, stagger: 0.1 });
+  });
 
   return (
     <section id="skills" ref={sectionRef} className="relative py-28 px-6 lg:px-12">

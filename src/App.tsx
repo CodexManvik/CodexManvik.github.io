@@ -4,6 +4,7 @@ import { CustomCursor } from './components/CustomCursor';
 import { Navigation } from './components/Navigation';
 import { HomePage } from './pages/HomePage';
 import { CertificationsPage } from './pages/CertificationsPage';
+import { refreshScrollTriggersOnLayoutChange } from './lib/reveal';
 
 function App() {
   const location = useLocation();
@@ -12,6 +13,8 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  useEffect(refreshScrollTriggersOnLayoutChange, []);
 
   // Touch device cursor
   useEffect(() => {

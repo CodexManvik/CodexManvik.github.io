@@ -1,9 +1,6 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Award, Trophy, Target, Code2 } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from 'react';
+import { Award, Trophy, Target } from 'lucide-react';
+import { reveal, useReveal } from '../lib/reveal';
 
 const achievements = [
   {
@@ -22,13 +19,8 @@ const achievements = [
     icon: <Target size={20} />,
   },
   {
-    title: 'Google Big Code Challenge',
-    description: 'Ranked top 15,000 across India.',
-    icon: <Code2 size={20} />,
-  },
-  {
     title: 'NPTEL Topper',
-    description: 'Topped an NPTEL course, the national online learning programme run by the IITs and IISc.',
+    description: 'Topped two NPTEL courses, Deep Learning and Design and Analysis of Algorithms, in the national online learning programme run by the IITs and IISc.',
     icon: <Award size={20} />,
   },
 ];
@@ -38,22 +30,11 @@ export function Achievements() {
   const titleRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useReveal(sectionRef, () => {
     if (!titleRef.current || !gridRef.current) return;
-
-    gsap.fromTo(titleRef.current.children, { y: 40, opacity: 0 }, {
-      y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: titleRef.current, start: 'top 85%' },
-    });
-
-    const cards = gridRef.current.querySelectorAll('.achieve-card');
-    gsap.fromTo(cards, { y: 40, opacity: 0 }, {
-      y: 0, opacity: 1, duration: 0.6, stagger: 0.12, ease: 'power3.out',
-      scrollTrigger: { trigger: gridRef.current, start: 'top 80%' },
-    });
-
-    return () => { ScrollTrigger.getAll().forEach((t) => t.kill()); };
-  }, []);
+    reveal(titleRef.current.children, titleRef.current, { y: 40 }, { duration: 0.8, stagger: 0.1 });
+    reveal(gridRef.current.querySelectorAll('.achieve-card'), gridRef.current, { y: 40 }, { stagger: 0.12 });
+  });
 
   return (
     <section id="achievements" ref={sectionRef} className="relative py-28 px-6 lg:px-12">

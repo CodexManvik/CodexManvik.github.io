@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ArrowLeft, Award, Calendar, ExternalLink } from 'lucide-react';
+import { useReveal } from '../lib/reveal';
 
 interface Certification {
   title: string;
@@ -277,27 +278,15 @@ export function CertificationsPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (!containerRef.current || !cardsRef.current) return;
+  }, []);
 
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  useReveal(containerRef, () => {
+    if (!containerRef.current || !cardsRef.current) return;
     const header = containerRef.current.querySelector('.page-header');
     const cards = cardsRef.current.querySelectorAll('.cert-card');
-
-    if (reduced) {
-      gsap.set([header, ...Array.from(cards)], { opacity: 1, y: 0 });
-      return;
-    }
-
-    gsap.fromTo(header, { y: 40, opacity: 0 }, {
-      y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.2,
-    });
-
-    gsap.fromTo(cards, { y: 50, opacity: 0 }, {
-      y: 0, opacity: 1, duration: 0.6, stagger: 0.04, ease: 'power3.out', delay: 0.4,
-    });
-
-    return () => { gsap.killTweensOf(cards); };
-  }, []);
+    gsap.from(header, { y: 40, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.2 });
+    gsap.from(cards, { y: 50, opacity: 0, duration: 0.6, stagger: 0.04, ease: 'power3.out', delay: 0.4 });
+  });
 
   return (
     <div ref={containerRef} className="min-h-[100dvh] bg-[rgb(var(--bg))] pt-24 pb-20 px-6 lg:px-12">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="mdG1uIoBI3NnJ4FMUe-hIV7HyvvDYgobRsCal0Za4jI" />
     <title>Manvik Talwar — AI/ML Engineer (GenAI, LLMs, RAG, Agentic AI)</title>
-    <meta name="description" content="Manvik Talwar is an AI/ML engineer building LLM, RAG and agentic AI systems: IntelliOps agentic AIOps (Deloitte Capstone), local-LLM claims adjudication, enterprise RAG." />
+    <meta name="description" content="Manvik Talwar is an AI/ML engineer building LLM, RAG and agentic AI systems: IntelliOps agentic AIOps (Deloitte Capstone), LLM claims adjudication, an AI interview panel." />
     <meta name="author" content="Manvik Talwar" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <link rel="canonical" href="https://codexmanvik.github.io/" />
@@ -17,7 +17,7 @@
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Manvik Talwar" />
     <meta property="og:title" content="Manvik Talwar — AI/ML Engineer (GenAI, LLMs, RAG, Agentic AI)" />
-    <meta property="og:description" content="Manvik Talwar is an AI/ML engineer building LLM, RAG and agentic AI systems: IntelliOps agentic AIOps (Deloitte Capstone), local-LLM claims adjudication, enterprise RAG." />
+    <meta property="og:description" content="Manvik Talwar is an AI/ML engineer building LLM, RAG and agentic AI systems: IntelliOps agentic AIOps (Deloitte Capstone), LLM claims adjudication, an AI interview panel." />
     <meta property="og:url" content="https://codexmanvik.github.io/" />
     <meta property="og:image" content="https://codexmanvik.github.io/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -27,7 +27,7 @@
     <meta property="profile:last_name" content="Talwar" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Manvik Talwar — AI/ML Engineer (GenAI, LLMs, RAG, Agentic AI)" />
-    <meta name="twitter:description" content="Manvik Talwar is an AI/ML engineer building LLM, RAG and agentic AI systems: IntelliOps agentic AIOps (Deloitte Capstone), local-LLM claims adjudication, enterprise RAG." />
+    <meta name="twitter:description" content="Manvik Talwar is an AI/ML engineer building LLM, RAG and agentic AI systems: IntelliOps agentic AIOps (Deloitte Capstone), LLM claims adjudication, an AI interview panel." />
     <meta name="twitter:image" content="https://codexmanvik.github.io/og-image.png" />
 
     <script type="application/ld+json">
@@ -48,7 +48,7 @@
           "name": "Manvik Talwar — AI/ML Engineer",
           "isPartOf": { "@id": "https://codexmanvik.github.io/#website" },
           "mainEntity": { "@id": "https://codexmanvik.github.io/#person" },
-          "dateModified": "2026-09-28"
+          "dateModified": "2026-10-29"
         },
         {
           "@type": "Person",
@@ -81,7 +81,7 @@
           },
           "knowsAbout": [
             "Machine Learning", "Deep Learning", "Generative AI", "Large Language Models",
-            "Retrieval-Augmented Generation", "Agentic AI", "Multi-agent systems", "LangGraph", "LangChain",
+            "Retrieval-Augmented Generation", "Agentic AI", "AI agents", "LangGraph", "LangChain",
             "Model Context Protocol", "Prompt Engineering", "LLM Evaluation", "LLM Inference", "llama.cpp",
             "Constrained Decoding", "Quantization", "Computer Vision", "Natural Language Processing",
             "AIOps", "MLOps", "Kubernetes", "FastAPI", "Python", "PyTorch", "TensorFlow", "Vector Search"
@@ -95,15 +95,40 @@
         {
           "@type": "SoftwareSourceCode",
           "name": "IntelliOps: Agentic AIOps Platform",
-          "description": "Deloitte Capstone Programme 2026. A 7-service, event-driven AIOps platform (Python, FastAPI, Redis Streams, PostgreSQL, Prometheus, React) that collapses alert storms into incidents, ranks root causes and runs governed, reversible remediation on Kubernetes. 75% alert-noise reduction, 41 s median time-to-fix, 833 automated tests.",
+          "description": "Deloitte Capstone Programme 2026. Seven Python (FastAPI) microservices over Redis Streams and PostgreSQL with a React operator console. Groups alert storms into incidents, ranks root causes and runs reversible remediation on Kubernetes with automatic rollback; the LLM agent is limited to a closed set of remediation actions behind a fail-closed human-approval gate. The robust seasonal anomaly detector cuts the false-positive rate 7x (0.014 to 0.002) on a seeded benchmark enforced in CI. 860+ tests.",
           "codeRepository": "https://github.com/CodexManvik/intelliops",
           "programmingLanguage": "Python",
           "author": { "@id": "https://codexmanvik.github.io/#person" }
         },
         {
           "@type": "SoftwareSourceCode",
+          "name": "Claims Auto-Adjudication Engine",
+          "description": "Health insurance claims engine built at Niva Bupa: a 7-gate deterministic pipeline plus an LLM (Gemma on llama.cpp locally, or Groq) with GBNF-constrained JSON. Batching exclusion screening cut LLM calls per bill line item from ~11 to 1. 77 tests.",
+          "codeRepository": "https://github.com/CodexManvik/policy-automate",
+          "programmingLanguage": "Python",
+          "author": { "@id": "https://codexmanvik.github.io/#person" }
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Interview Mirror",
+          "url": "https://interview-mirror-hy2n.vercel.app",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web browser",
+          "description": "AI interview panel (technical, manager, HR), each with its own Azure neural TTS voice, asking questions generated from the candidate's resume and target job description. Groq-hosted LLMs and Groq Whisper; on-device MediaPipe body-language analysis; evidence-based scoring with two LLM graders and a tie-break. Built with Archit Badoni.",
+          "author": { "@id": "https://codexmanvik.github.io/#person" }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "Aethel",
+          "description": "Local-first desktop AI agent, v2.0.0-beta.1 with a Windows installer. Multi-step PC tasks through an MCP tool hub with permission manifests, approval gates and one-click rollback; Reflective Skill Memory compiles skills into LLM-free macros after 3 identical runs. 790+ tests.",
+          "codeRepository": "https://github.com/CodexManvik/Aethel",
+          "programmingLanguage": "Python",
+          "author": { "@id": "https://codexmanvik.github.io/#person" }
+        },
+        {
+          "@type": "SoftwareSourceCode",
           "name": "Agentic RAG for Distributed Content",
-          "description": "Multi-agent LangGraph RAG pipeline over hybrid vector + BM25 retrieval with citation validation and abstention; 0.690 Hit@k and 0.549 MRR on local models.",
+          "description": "LangGraph agent RAG pipeline over hybrid vector + BM25 retrieval with citation validation and abstention; 0.690 Hit@k and 0.549 MRR on local models.",
           "codeRepository": "https://github.com/CodexManvik/Agentic-Rag-for-Distributed-Content",
           "programmingLanguage": "Python",
           "author": { "@id": "https://codexmanvik.github.io/#person" }

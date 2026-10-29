@@ -24,11 +24,18 @@ AI/ML engineer with three internships shipping LLM systems (local-LLM claims adj
 
 ## Professional experience
 
+### Capstone Engineer (IntelliOps) — Deloitte Capstone Programme (Aug 2026 – Sep 2026)
+
+- Built IntelliOps, an agentic AIOps platform: seven Python (FastAPI) microservices over Redis Streams and PostgreSQL with a React operator console, grouping alert storms into incidents, ranking root causes and running reversible remediation on Kubernetes with automatic rollback.
+- Limited the LLM agent to a closed set of remediation actions behind a fail-closed human-approval gate with a full audit trail; playbooks graduate to automatic only after a record of verified fixes, and every outcome feeds back as training data.
+- Built pluggable anomaly detectors and a seeded benchmark harness: the robust seasonal detector cuts the false-positive rate 7x (0.014 to 0.002), enforced in CI; 860+ tests.
+
 ### AI Engineering Intern — Niva Bupa Health Insurance (May 2026 – Jul 2026)
 
-- Built a claims auto-adjudication engine for the ReAssure 3.0 health policy: a 7-gate pipeline (policy, member, coverage, waiting period, exclusion, financial, state update) mixing deterministic rules with a local Gemma LLM on llama.cpp.
+- Built a claims auto-adjudication engine for the ReAssure 3.0 health policy: a 7-gate pipeline (policy, member, coverage, waiting period, exclusion, financial, state update) mixing deterministic rules with an LLM that runs locally (Gemma on llama.cpp) or through a cloud API (Groq).
 - Forced schema-valid JSON output with GBNF grammar-constrained decoding and built 4-tier confidence routing that sends uncertain claims to operations, clinical or senior-auditor review queues instead of forcing an automated verdict.
-- Built a DAG rule planner (Kahn's topological sort) for audit-replayable plans, async FastAPI with per-gate SSE streaming, OCR + LLM extraction from discharge summaries, and a 67-test pytest suite that runs without a live LLM.
+- Built a DAG rule planner (Kahn's topological sort) for audit-replayable plans, async FastAPI with per-gate SSE streaming, OCR + LLM extraction from discharge summaries, and a 77-test pytest suite that runs without a live LLM.
+- Cut LLM calls per bill line item from ~11 to 1 by batching exclusion screening into a single call.
 
 ### Backend Engineering Intern — TechLearn (Feb 2026 – May 2026)
 
@@ -46,9 +53,33 @@ AI/ML engineer with three internships shipping LLM systems (local-LLM claims adj
 
 Repository: https://github.com/CodexManvik/intelliops
 
-- Built a 7-service, event-driven AIOps platform (Python, FastAPI, Redis Streams, PostgreSQL, Prometheus, React) that collapses alert storms into incidents, ranks root causes and runs governed, reversible remediation on Kubernetes.
-- On a live cluster: 75% alert-noise reduction, 41 s median time-to-fix, 21/30 fixes verified healthy with automatic rollback on failure; autonomy rose from 0% to 76.7% of runs as playbooks earned it from verified outcomes. 833 automated tests.
-- Designed robust anomaly detection (median/MAD z-scores per metric and hour-of-day, persistence-gated) and confined the LLM agent to a closed 7-verb action vocabulary behind a synchronous, fail-closed human-approval gate with a full audit trail.
+- Seven Python (FastAPI) microservices over Redis Streams and PostgreSQL, with a React operator console. Groups alert storms into incidents, ranks root causes and runs reversible remediation on Kubernetes with automatic rollback.
+- The LLM agent is limited to a closed set of remediation actions behind a fail-closed human-approval gate; playbooks graduate to automatic only after a record of verified fixes, and outcomes feed back as training data.
+- Pluggable anomaly detectors (online z-score, robust median/MAD seasonal, trained Isolation Forest) with a seeded benchmark harness (docs/BENCHMARKS.md): the robust detector cuts the seasonal false-positive rate 7x (0.014 to 0.002), enforced in CI.
+- Grafana, Loki and Prometheus observability, a full audit trail and 860+ tests.
+
+### Claims Auto-Adjudication Engine — Niva Bupa internship
+
+Repository: https://github.com/CodexManvik/policy-automate
+
+- 7-gate pipeline (policy, member, coverage, waiting period, exclusion, financial, state update) with deterministic rules and an LLM reasoning over discharge summaries with GBNF-constrained JSON; runs on a local LLM (Gemma on llama.cpp) or a cloud API (Groq).
+- Batching exclusion screening cut LLM calls per bill line item from ~11 to 1; 4-tier confidence routing sends uncertain claims to human review queues; 77 tests.
+
+### Interview Mirror — AI interview panel (team of 2, with Archit Badoni)
+
+Live: https://interview-mirror-hy2n.vercel.app
+
+- A three-person AI panel (technical, manager, HR) that takes turns, each with its own Azure neural TTS voice; questions are generated from the candidate's resume and target job description.
+- Groq-hosted LLMs and Groq Whisper speech-to-text; on-device MediaPipe body-language analysis, so video never leaves the browser.
+- Evidence-based scoring (two LLM graders, a tie-break pass, a transcript evidence check) with LLM fallbacks, timeouts and cooldowns; 950+ backend and 300+ frontend tests in CI.
+
+### Aethel: Local-First Desktop AI Agent — llama.cpp, FastAPI, Tauri, MCP, LanceDB
+
+Repository: https://github.com/CodexManvik/Aethel
+
+- Shipped v2.0.0-beta.1 with a Windows installer (GitHub Releases). Runs multi-step PC tasks through an MCP tool hub with permission manifests, approval gates and one-click rollback.
+- Reflective Skill Memory: skills compile into LLM-free macros after 3 identical runs. A CPU-only decision model (~0.2 s per call) routes intent at 0.91 precision and recall on held-out labelled data.
+- Voice, personas and image generation; 790+ tests.
 
 ### DWT-CNN Invisible Image Watermarking — TensorFlow
 
@@ -61,20 +92,14 @@ Repository: https://github.com/CodexManvik/Deep-Learning-Based-Watermarking
 
 Repository: https://github.com/CodexManvik/Agentic-Rag-for-Distributed-Content
 
-- Built a multi-agent LangGraph pipeline (plan, retrieve, adequacy check, reformulate, synthesize, citation validation) over hybrid vector + BM25 retrieval, abstaining instead of hallucinating when evidence is weak or a query is out of policy.
+- Built a LangGraph agent pipeline (plan, retrieve, adequacy check, reformulate, synthesize, citation validation) over hybrid vector + BM25 retrieval, abstaining instead of hallucinating when evidence is weak or a query is out of policy.
 - Wrote an evaluation harness (Hit@k, MRR, citation precision, abstain precision/recall); tuned profile reached 0.690 Hit@k and 0.549 MRR at 28.8 s median latency on local models and blocked all prompt-injection test queries.
-
-### Aethel: Local-First AI Agent Runtime — llama.cpp, FastAPI, Tauri, LanceDB (in development)
-
-Repository: https://github.com/CodexManvik/Aethel
-
-- Local desktop agent with permissioned, rollback-safe tools; Reflective Skill Memory keeps or retires skills by success rate.
 
 ### Other projects
 
-- FloatChat-AI (https://github.com/CodexManvik/FloatChat-AI): NL-to-SQL and semantic search over ARGO ocean data; Smart India Hackathon 2025 national semi-finalist.
-- Interview Mirror (https://github.com/CodexManvik/Interview-Mirror): real-time AI interview coach with MediaPipe landmark tracking, Gemini, Whisper and TTS.
-- MusicGen (https://github.com/CodexManvik/automatic-music-generation): transformer and LSTM-based MIDI music generation.
+- FloatChat-AI (https://github.com/CodexManvik/FloatChat-AI): Smart India Hackathon 2025 national semi-finalist. Questions over Argo ocean data (438 floats, 3,891 profiles, 88,541 measurements; Indian Ocean, Jan–Mar 2024) route to NL-to-SQL (templates plus LLM-written SQL, validated as a single read-only SELECT) or ChromaDB semantic search with region, month and oxygen filters; any OpenAI-compatible LLM (Groq, Ollama); FastAPI, Streamlit, Docker Compose.
+- Sofia (https://github.com/CodexManvik/Sofia-A-Chatbot-For-Realtime-Document-Insights): enterprise RAG assistant built at Path Infotech on Azure OpenAI and Cognitive Search, with a citation layer.
+- MusicGen (https://github.com/CodexManvik/automatic-music-generation): 2-layer LSTM (PyTorch) trained on Schubert piano MIDI parsed with music21, generating new MIDI autoregressively.
 
 ## Education
 
@@ -85,7 +110,7 @@ Repository: https://github.com/CodexManvik/Aethel
 - Smart India Hackathon 2025 National Semi-Finalist (FloatChat-AI).
 - 4x Student Excellence Award, Manipal University Jaipur.
 - Dell x GDG Ideathon Finalist.
-- NPTEL Topper.
+- NPTEL Topper in two courses: Deep Learning, and Design and Analysis of Algorithms.
 
 ## Certifications
 

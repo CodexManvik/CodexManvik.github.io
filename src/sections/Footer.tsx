@@ -1,27 +1,16 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Github, Linkedin, Mail, ArrowUpRight, MapPin, Code2 } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { reveal, useReveal } from '../lib/reveal';
 
 export function Footer() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    const content = contentRef.current;
-    if (!section || !content) return;
-
-    gsap.fromTo(content.children, { y: 40, opacity: 0 }, {
-      y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: 'power3.out',
-      scrollTrigger: { trigger: section, start: 'top 80%' },
-    });
-
-    return () => { ScrollTrigger.getAll().forEach((t) => t.kill()); };
-  }, []);
+  useReveal(sectionRef, () => {
+    if (!sectionRef.current || !contentRef.current) return;
+    reveal(contentRef.current.children, sectionRef.current, { y: 40 }, { duration: 1, stagger: 0.12 });
+  });
 
   const socialLinks = [
     { icon: <Github size={18} />, label: 'GitHub', href: 'https://github.com/CodexManvik' },

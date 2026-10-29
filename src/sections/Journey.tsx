@@ -1,8 +1,5 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from 'react';
+import { reveal, useReveal } from '../lib/reveal';
 
 interface Milestone {
   year: string;
@@ -29,7 +26,7 @@ const milestones: Milestone[] = [
   {
     year: '2025',
     title: 'Interview Mirror',
-    description: 'Built a real-time AI interview coach using MediaPipe + Gemini with live feedback, 543 landmark tracking, and low-latency streaming.',
+    description: 'Started Interview Mirror with Archit Badoni: an AI interview coach that grew into a three-person AI panel with resume-based questions, on-device body-language analysis and evidence-based scoring.',
   },
   {
     year: '2025',
@@ -39,7 +36,7 @@ const milestones: Milestone[] = [
   {
     year: '2026',
     title: 'Agentic RAG for Distributed Content',
-    description: 'Built a multi-agent LangGraph RAG pipeline over hybrid vector + BM25 retrieval, with an evaluation harness and citation validation.',
+    description: 'Built a LangGraph agent pipeline for RAG over hybrid vector + BM25 retrieval, with an evaluation harness and citation validation.',
   },
   {
     year: 'Feb 2026',
@@ -52,9 +49,9 @@ const milestones: Milestone[] = [
     description: 'Built a claims auto-adjudication engine combining a 7-gate deterministic pipeline with a local LLM for clinical reasoning, with confidence-based routing to human reviewers.',
   },
   {
-    year: '2026',
+    year: 'Aug 2026',
     title: 'Deloitte Capstone Programme: IntelliOps',
-    description: 'Built IntelliOps, an agentic AIOps platform: 75% alert-noise reduction and 41 s median time-to-fix on a live Kubernetes cluster, with governed, reversible remediation.',
+    description: 'Built IntelliOps, an agentic AIOps platform: seven FastAPI microservices that group alert storms into incidents, rank root causes and run reversible Kubernetes remediation behind a fail-closed human-approval gate.',
   },
 ];
 
@@ -63,28 +60,13 @@ export function Journey() {
   const titleRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
+  useReveal(sectionRef, () => {
     if (!titleRef.current) return;
-
-    gsap.fromTo(titleRef.current.children, { y: 40, opacity: 0 }, {
-      y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: titleRef.current, start: 'top 85%' },
-    });
-
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+    reveal(titleRef.current.children, titleRef.current, { y: 40 }, { duration: 0.8, stagger: 0.1 });
     itemsRef.current.forEach((item, i) => {
-      if (!item) return;
-      // Reduced motion gets a plain fade: no lateral travel.
-      const from = reduced ? { opacity: 0 } : { x: i % 2 === 0 ? -30 : 30, opacity: 0 };
-      gsap.fromTo(item, from, {
-        x: 0, opacity: 1, duration: reduced ? 0.3 : 0.7, ease: 'power3.out',
-        scrollTrigger: { trigger: item, start: 'top 85%' },
-      });
+      if (item) reveal(item, item, { x: i % 2 === 0 ? -30 : 30 }, { duration: 0.7 });
     });
-
-    return () => { ScrollTrigger.getAll().forEach((t) => t.kill()); };
-  }, []);
+  });
 
   return (
     <section id="journey" ref={sectionRef} className="relative py-28 px-6 lg:px-12">
