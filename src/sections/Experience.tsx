@@ -87,7 +87,7 @@ export function Experience() {
 
         <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {jobs.map((job) => (
-            <div key={job.company} className="exp-card relative rounded-2xl bg-[rgb(var(--bg-elevated))] border border-[rgba(var(--border),0.06)] p-7 hover:border-[rgba(var(--accent),0.15)] transition-all duration-500">
+            <div key={job.company} className="exp-card relative rounded-2xl bg-[rgb(var(--bg-elevated))] border border-[rgba(var(--border),0.06)] p-7 hover:border-[rgba(var(--accent),0.15)] transition-colors duration-500">
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgb(var(--accent))]/20 to-transparent" />
 
               <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-3 mb-4">

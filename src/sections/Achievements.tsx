@@ -52,7 +52,7 @@ export function Achievements() {
           {achievements.map((ach) => (
             <div
               key={ach.title}
-              className="achieve-card group relative rounded-2xl bg-[rgb(var(--bg-elevated))] border border-[rgba(var(--border),0.06)] p-6 hover:border-[rgba(var(--accent),0.15)] transition-all duration-500"
+              className="achieve-card group relative rounded-2xl bg-[rgb(var(--bg-elevated))] border border-[rgba(var(--border),0.06)] p-6 hover:border-[rgba(var(--accent),0.15)] transition-colors duration-500"
             >
               <div className="relative z-10 flex items-start gap-4">
                 <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"

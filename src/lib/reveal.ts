@@ -27,9 +27,10 @@ export function useReveal(scope: RefObject<HTMLElement | null>, setup: () => voi
 }
 
 /**
- * Fades `targets` in once `trigger` scrolls into view. `once` stops a reveal from
- * ever re-hiding content, and a trigger already above the viewport (fast scroll,
- * deep link) plays straight away. Call it from a useReveal setup.
+ * Fades `targets` in once `trigger` scrolls into view, from the `from` offsets
+ * (x/y) back to 0. `once` stops a reveal from ever re-hiding content, and a trigger
+ * already above the viewport (fast scroll, deep link) plays straight away. Call it
+ * from a useReveal setup.
  */
 export function reveal(
   targets: gsap.TweenTarget,
@@ -40,9 +41,13 @@ export function reveal(
   // A trigger that is also a target gets measured in its shifted-down from-state,
   // which would reveal it that many pixels late; measure from where it ends up.
   const shift = typeof from.y === 'number' && gsap.utils.toArray(targets).includes(trigger) ? from.y : 0;
-  const tween = gsap.from(targets, {
-    ...from,
-    opacity: 0,
+  // Explicit end values: a from() tween reads them off the element, and a refresh
+  // re-reads them. If a CSS transition is mid-fade at that moment it reads ~0 and
+  // the card animates from 0 to 0 (Achievements stayed blank on wide screens).
+  const to = Object.fromEntries(Object.keys(from).map((k) => [k, 0]));
+  const tween = gsap.fromTo(targets, { ...from, opacity: 0 }, {
+    ...to,
+    opacity: 1,
     duration: 0.6,
     ease: 'power3.out',
     ...vars,
